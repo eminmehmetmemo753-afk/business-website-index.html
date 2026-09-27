@@ -4,640 +4,711 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>BusinessPro | Modern İşletme Web Sitesi</title>
+<title>BusinessPro | Profesyonel Web Sitesi</title>
 
-<meta name="description" content="Modern, hızlı ve mobil uyumlu işletme web sitesi.">
+<meta name="description" content="BusinessPro profesyonel web sitesi ve aksesuar mağazası">
 
 <style>
 
-:root{
-  --bg:#f8fafc;
-  --card:#ffffff;
-  --text:#0f172a;
-  --muted:#64748b;
-  --primary:#2563eb;
-  --primary2:#7c3aed;
-  --border:#e2e8f0;
-  --shadow:0 15px 40px rgba(15,23,42,.08);
-  --success:#16a34a;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  scroll-behavior:smooth;
+html{
+    scroll-behavior:smooth;
 }
 
 body{
-  font-family:Arial,Helvetica,sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  line-height:1.6;
-  transition:.3s;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f7f7f7;
+    color:#111;
+    line-height:1.6;
 }
 
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button{
+    font-family:inherit;
+}
+
+/* =========================
+   HEADER
+========================= */
+
 header{
-  position:sticky;
-  top:0;
-  z-index:1000;
-  background:rgba(255,255,255,.94);
-  backdrop-filter:blur(12px);
-  border-bottom:1px solid var(--border);
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(255,255,255,.95);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid #e8e8e8;
 }
 
 .navbar{
-  max-width:1150px;
-  margin:auto;
-  padding:16px 20px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+    max-width:1200px;
+    margin:auto;
+    min-height:72px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 20px;
 }
 
 .logo{
-  font-size:23px;
-  font-weight:800;
+    font-size:24px;
+    font-weight:800;
+    letter-spacing:-1px;
 }
 
 .logo span{
-  color:var(--primary);
+    color:#6c5ce7;
 }
 
-nav{
-  display:flex;
-  gap:18px;
-  align-items:center;
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:22px;
 }
 
-nav a{
-  color:var(--text);
-  text-decoration:none;
-  font-weight:600;
+.nav-links a{
+    font-size:14px;
+    font-weight:600;
+    color:#333;
+    transition:.2s;
 }
 
-nav a:hover{
-  color:var(--primary);
-}
-
-.actions{
-  display:flex;
-  gap:8px;
-}
-
-.icon-btn,
-.menu-btn{
-  border:0;
-  cursor:pointer;
-  background:#eef2ff;
-  padding:10px 12px;
-  border-radius:10px;
-  font-size:17px;
+.nav-links a:hover{
+    color:#6c5ce7;
 }
 
 .menu-btn{
-  display:none;
+    display:none;
+    border:0;
+    background:none;
+    font-size:28px;
+    cursor:pointer;
 }
+
+/* =========================
+   HERO
+========================= */
 
 .hero{
-  min-height:90vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:80px 20px;
+    min-height:650px;
+    display:flex;
+    align-items:center;
+    background:
+    radial-gradient(circle at top right,#ded7ff,transparent 35%),
+    linear-gradient(135deg,#ffffff,#f4f2ff);
+}
 
-  background:
-    radial-gradient(circle at top left,#dbeafe,transparent 35%),
-    radial-gradient(circle at bottom right,#ede9fe,transparent 35%);
+.hero-inner{
+    width:100%;
+    max-width:1200px;
+    margin:auto;
+    padding:80px 20px;
 }
 
 .hero-content{
-  max-width:850px;
-  animation:show .8s ease;
+    max-width:760px;
 }
 
 .badge{
-  display:inline-block;
-  padding:8px 15px;
-  border-radius:50px;
-  background:#dbeafe;
-  color:#1d4ed8;
-  font-weight:700;
-  margin-bottom:20px;
+    display:inline-block;
+    background:#ece9ff;
+    color:#5b4bd8;
+    padding:8px 14px;
+    border-radius:999px;
+    font-size:13px;
+    font-weight:700;
+    margin-bottom:20px;
 }
 
 .hero h1{
-  font-size:clamp(42px,7vw,76px);
-  line-height:1.05;
-  margin-bottom:25px;
+    font-size:clamp(42px,7vw,78px);
+    line-height:1.02;
+    letter-spacing:-4px;
+    margin-bottom:24px;
 }
 
-.gradient{
-  background:linear-gradient(90deg,var(--primary),var(--primary2));
-  -webkit-background-clip:text;
-  color:transparent;
+.hero h1 span{
+    color:#6c5ce7;
 }
 
 .hero p{
-  max-width:650px;
-  margin:0 auto 30px;
-  color:var(--muted);
-  font-size:19px;
+    max-width:650px;
+    color:#666;
+    font-size:18px;
+    margin-bottom:30px;
+}
+
+.hero-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
 }
 
 .btn{
-  display:inline-block;
-  padding:14px 24px;
-  border-radius:12px;
-  text-decoration:none;
-  font-weight:700;
-  margin:5px;
-  transition:.25s;
-  cursor:pointer;
-  border:0;
-  font-size:16px;
+    border:0;
+    cursor:pointer;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:14px 22px;
+    border-radius:12px;
+    font-weight:700;
+    transition:.2s;
 }
 
 .btn-primary{
-  color:white;
-  background:linear-gradient(135deg,var(--primary),var(--primary2));
-  box-shadow:0 10px 25px rgba(37,99,235,.25);
+    background:#111;
+    color:#fff;
 }
 
 .btn-primary:hover{
-  transform:translateY(-3px);
+    transform:translateY(-2px);
+    background:#6c5ce7;
 }
 
-.btn-outline{
-  color:var(--text);
-  border:1px solid var(--border);
-  background:var(--card);
+.btn-secondary{
+    background:#fff;
+    color:#111;
+    border:1px solid #ddd;
 }
 
-.btn-success{
-  color:white;
-  background:var(--success);
+.btn-secondary:hover{
+    border-color:#6c5ce7;
+    color:#6c5ce7;
 }
+
+/* =========================
+   GENERAL
+========================= */
 
 section{
-  padding:90px 20px;
+    padding:90px 20px;
 }
 
 .container{
-  max-width:1150px;
-  margin:auto;
+    max-width:1200px;
+    margin:auto;
 }
 
 .section-title{
-  text-align:center;
-  margin-bottom:50px;
+    text-align:center;
+    margin-bottom:50px;
 }
 
 .section-title h2{
-  font-size:40px;
-  margin-bottom:10px;
+    font-size:42px;
+    letter-spacing:-1.5px;
+    margin-bottom:10px;
 }
 
 .section-title p{
-  color:var(--muted);
+    color:#777;
 }
 
-.discount{
-  display:inline-block;
-  margin-top:15px;
-  padding:10px 18px;
-  border-radius:50px;
-  background:#fee2e2;
-  color:#dc2626;
-  font-weight:800;
+/* =========================
+   FEATURES
+========================= */
+
+.features{
+    background:#fff;
 }
 
-.grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:25px;
+.feature-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
 }
 
-.card{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:20px;
-  padding:30px;
-  box-shadow:var(--shadow);
-  transition:.3s;
+.feature{
+    background:#fafafa;
+    border:1px solid #eee;
+    border-radius:20px;
+    padding:30px;
 }
 
-.card:hover{
-  transform:translateY(-8px);
+.feature-icon{
+    font-size:35px;
+    margin-bottom:15px;
 }
 
-.icon{
-  font-size:35px;
-  margin-bottom:15px;
+.feature h3{
+    margin-bottom:8px;
 }
 
-.card h3{
-  margin-bottom:10px;
-  font-size:22px;
+.feature p{
+    color:#777;
 }
 
-.card p{
-  color:var(--muted);
+/* =========================
+   PRICING
+========================= */
+
+.pricing{
+    background:#f7f7f7;
 }
 
-.feature-list{
-  list-style:none;
-  margin-top:20px;
+.pricing-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
 }
 
-.feature-list li{
-  margin:10px 0;
+.price-card{
+    background:#fff;
+    border:1px solid #e8e8e8;
+    border-radius:22px;
+    padding:32px;
+    position:relative;
 }
 
-.price{
-  font-size:42px;
-  font-weight:800;
-  margin:20px 0;
-}
-
-.price del{
-  font-size:22px;
-  color:#94a3b8;
-  margin-right:8px;
-}
-
-.price small{
-  font-size:15px;
-  color:var(--muted);
-}
-
-.popular{
-  border:2px solid var(--primary);
-  position:relative;
+.price-card.popular{
+    border:2px solid #6c5ce7;
+    transform:translateY(-8px);
 }
 
 .popular-label{
-  position:absolute;
-  top:-14px;
-  left:50%;
-  transform:translateX(-50%);
-  background:var(--primary);
-  color:white;
-  padding:5px 15px;
-  border-radius:30px;
-  font-size:13px;
-  font-weight:bold;
+    position:absolute;
+    top:15px;
+    right:15px;
+    background:#6c5ce7;
+    color:#fff;
+    padding:6px 10px;
+    border-radius:999px;
+    font-size:11px;
+    font-weight:bold;
 }
 
-.testimonial{
-  text-align:center;
+.old-price{
+    color:#999;
+    text-decoration:line-through;
+    font-size:14px;
 }
 
-.stars{
-  color:#f59e0b;
-  font-size:20px;
-  margin-bottom:15px;
+.price{
+    font-size:42px;
+    font-weight:800;
+    margin:5px 0 20px;
 }
 
-.faq{
-  max-width:800px;
-  margin:auto;
+.price-card ul{
+    list-style:none;
+    margin-bottom:25px;
 }
 
-details{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:14px;
-  margin:12px 0;
-  padding:18px 20px;
+.price-card li{
+    margin:10px 0;
+    color:#555;
 }
-
-summary{
-  cursor:pointer;
-  font-weight:700;
-}
-
-details p{
-  color:var(--muted);
-  margin-top:12px;
-}
-
-.contact{
-  max-width:800px;
-  margin:auto;
-  text-align:center;
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:25px;
-  padding:50px 25px;
-  box-shadow:var(--shadow);
-}
-
-.order-box{
-  margin-top:25px;
-  padding:20px;
-  border-radius:16px;
-  background:var(--bg);
-  border:1px solid var(--border);
-}
-
-footer{
-  padding:35px 20px;
-  text-align:center;
-  border-top:1px solid var(--border);
-  color:var(--muted);
-}
-
-.whatsapp{
-  position:fixed;
-  right:20px;
-  bottom:20px;
-  width:58px;
-  height:58px;
-  border-radius:50%;
-  background:#25d366;
-  color:white;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-decoration:none;
-  font-size:27px;
-  box-shadow:0 10px 25px rgba(0,0,0,.2);
-  z-index:999;
-}
-
 
 /* =========================
-   MAĞAZA
+   ACCESSORIES SHOP
 ========================= */
 
-.shop-note{
-  max-width:800px;
-  margin:-25px auto 35px;
-  text-align:center;
-  color:var(--muted);
+.shop{
+    background:#111;
+    color:#fff;
+}
+
+.shop .section-title p{
+    color:#aaa;
+}
+
+.shop-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
 }
 
 .product-card{
-  padding:0;
-  overflow:hidden;
-  cursor:pointer;
+    background:#1c1c1c;
+    border:1px solid #303030;
+    border-radius:20px;
+    overflow:hidden;
+    cursor:pointer;
+    transition:.25s;
+}
+
+.product-card:hover{
+    transform:translateY(-6px);
+    border-color:#6c5ce7;
 }
 
 .product-image{
-  width:100%;
-  height:270px;
-  object-fit:cover;
-  display:block;
-  background:#f1f5f9;
+    width:100%;
+    height:300px;
+    background:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+}
+
+.product-image img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    transition:.3s;
+}
+
+.product-card:hover .product-image img{
+    transform:scale(1.04);
 }
 
 .product-info{
-  padding:22px;
-}
-
-.product-badge{
-  display:inline-block;
-  padding:5px 10px;
-  border-radius:20px;
-  background:#eef2ff;
-  color:#3730a3;
-  font-size:12px;
-  font-weight:700;
+    padding:20px;
 }
 
 .product-info h3{
-  margin-top:10px;
+    margin-bottom:5px;
+}
+
+.product-info p{
+    color:#aaa;
+    font-size:14px;
 }
 
 .product-price{
-  font-size:28px;
-  font-weight:800;
-  margin:12px 0;
+    font-size:22px;
+    font-weight:800;
+    margin-top:10px;
 }
 
-.product-card .btn{
-  width:calc(100% - 10px);
+.product-btn{
+    width:100%;
+    margin-top:15px;
+    border:0;
+    padding:12px;
+    border-radius:10px;
+    background:#6c5ce7;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
 }
-
 
 /* =========================
-   ÜRÜN DETAY
+   PRODUCT MODAL
 ========================= */
 
 .modal{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(2,6,23,.78);
-  z-index:2000;
-  padding:20px;
-  overflow:auto;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.78);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    z-index:3000;
 }
 
 .modal.active{
-  display:flex;
-  align-items:center;
-  justify-content:center;
+    display:flex;
 }
 
 .modal-box{
-  width:min(950px,100%);
-  background:var(--card);
-  border-radius:24px;
-  overflow:hidden;
-  position:relative;
-  box-shadow:0 25px 80px rgba(0,0,0,.35);
-  display:grid;
-  grid-template-columns:1.1fr .9fr;
+    width:min(1000px,100%);
+    max-height:92vh;
+    overflow:auto;
+    background:#fff;
+    color:#111;
+    border-radius:24px;
+    position:relative;
+    padding:25px;
 }
 
-.close{
-  position:absolute;
-  right:15px;
-  top:12px;
-  width:42px;
-  height:42px;
-  border:0;
-  border-radius:50%;
-  background:rgba(15,23,42,.8);
-  color:white;
-  font-size:27px;
-  cursor:pointer;
-  z-index:5;
+.close-modal{
+    position:absolute;
+    top:15px;
+    right:18px;
+    width:42px;
+    height:42px;
+    border:0;
+    border-radius:50%;
+    background:#eee;
+    font-size:22px;
+    cursor:pointer;
+    z-index:10;
 }
 
-
-/* BÜYÜK FOTOĞRAF */
-
-.main-product-photo{
-  width:100%;
-  height:500px;
-  object-fit:contain;
-  background:#f1f5f9;
-  display:block;
+.modal-content{
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:30px;
 }
 
-
-/* FOTO GALERİ */
-
-.gallery{
-  padding:15px;
-  display:flex;
-  gap:10px;
-  overflow-x:auto;
-  background:var(--card);
+.main-photo{
+    width:100%;
+    height:500px;
+    background:#f5f5f5;
+    border-radius:18px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
 }
 
-.gallery-thumb{
-  width:75px;
-  height:75px;
-  min-width:75px;
-  object-fit:cover;
-  border-radius:10px;
-  border:2px solid transparent;
-  cursor:pointer;
-  background:#f1f5f9;
+.main-photo img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
 }
 
-.gallery-thumb.active{
-  border-color:var(--primary);
+.thumbnails{
+    display:flex;
+    gap:10px;
+    overflow-x:auto;
+    margin-top:12px;
+    padding-bottom:5px;
 }
 
+.thumbnail{
+    width:75px;
+    height:75px;
+    flex:0 0 75px;
+    background:#f5f5f5;
+    border:2px solid transparent;
+    border-radius:10px;
+    overflow:hidden;
+    cursor:pointer;
+}
 
-/* ÜRÜN BİLGİ */
+.thumbnail.active{
+    border-color:#6c5ce7;
+}
+
+.thumbnail img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+}
 
 .modal-info{
-  padding:35px;
+    padding:25px 10px;
 }
 
 .modal-info h2{
-  font-size:34px;
-  margin:10px 0;
-}
-
-.modal-info p{
-  color:var(--muted);
-  margin:15px 0 25px;
+    font-size:34px;
+    margin-bottom:8px;
 }
 
 .modal-price{
-  font-size:40px;
-  font-weight:800;
-  margin:15px 0;
+    font-size:30px;
+    font-weight:800;
+    margin:15px 0;
 }
 
-.gallery-title{
-  font-size:13px;
-  font-weight:700;
-  color:var(--muted);
-  padding:15px 15px 0;
+.modal-description{
+    color:#666;
+    margin-bottom:25px;
 }
 
-
-/* DARK */
-
-.dark{
-  --bg:#0f172a;
-  --card:#1e293b;
-  --text:#f8fafc;
-  --muted:#94a3b8;
-  --border:#334155;
-  --shadow:0 15px 40px rgba(0,0,0,.25);
-}
-
-.dark header{
-  background:rgba(15,23,42,.92);
-}
-
-.dark .hero{
-  background:
-    radial-gradient(circle at top left,#172554,transparent 35%),
-    radial-gradient(circle at bottom right,#312e81,transparent 35%);
-}
-
-.dark .badge{
-  background:#1e3a8a;
-  color:#bfdbfe;
-}
-
-
-/* ANIMATION */
-
-@keyframes show{
-  from{
-    opacity:0;
-    transform:translateY(30px);
-  }
-
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
-
-
-/* MOBİL */
-
-@media(max-width:800px){
-
-  nav{
-    display:none;
-    position:absolute;
-    top:70px;
-    left:0;
+.whatsapp-btn{
     width:100%;
-    background:var(--card);
-    padding:20px;
-    flex-direction:column;
-    border-bottom:1px solid var(--border);
-  }
+    background:#25D366;
+    color:white;
+    border:0;
+    padding:15px;
+    border-radius:12px;
+    font-size:16px;
+    font-weight:800;
+    cursor:pointer;
+    transition:.2s;
+}
 
-  nav.active{
-    display:flex;
-  }
+.whatsapp-btn:hover{
+    transform:translateY(-2px);
+}
 
-  .menu-btn{
-    display:block;
-  }
+/* =========================
+   TESTIMONIALS
+========================= */
 
-  .grid{
-    grid-template-columns:1fr;
-  }
+.testimonials{
+    background:#fff;
+}
 
-  .hero h1{
-    font-size:45px;
-  }
+.testimonial-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
 
-  section{
-    padding:65px 20px;
-  }
-
-  .modal-box{
-    grid-template-columns:1fr;
-  }
-
-  .main-product-photo{
-    height:330px;
-  }
-
-  .modal-info{
+.testimonial{
+    border:1px solid #eee;
     padding:25px;
-  }
+    border-radius:18px;
+    background:#fafafa;
+}
 
-  .modal-info h2{
+.stars{
+    color:#f5b700;
+    margin-bottom:10px;
+}
+
+/* =========================
+   FAQ
+========================= */
+
+.faq{
+    background:#f7f7f7;
+}
+
+.faq-item{
+    background:#fff;
+    border:1px solid #e8e8e8;
+    border-radius:15px;
+    padding:20px;
+    margin-bottom:12px;
+}
+
+.faq-item summary{
+    cursor:pointer;
+    font-weight:700;
+}
+
+.faq-item p{
+    color:#666;
+    padding-top:12px;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact{
+    background:#111;
+    color:#fff;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+}
+
+.contact-info p{
+    color:#aaa;
+    margin:10px 0;
+}
+
+.contact-card{
+    background:#1b1b1b;
+    border:1px solid #303030;
+    border-radius:20px;
+    padding:30px;
+}
+
+.contact-card a{
+    display:block;
+    padding:15px;
+    border-radius:10px;
+    background:#272727;
+    margin-bottom:10px;
+}
+
+.contact-card a:hover{
+    background:#6c5ce7;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:#090909;
+    color:#777;
+    text-align:center;
+    padding:30px 20px;
+}
+
+/* =========================
+   FLOAT WHATSAPP
+========================= */
+
+.whatsapp-floating{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    background:#25D366;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
     font-size:28px;
-  }
+    z-index:2000;
+    box-shadow:0 8px 30px rgba(0,0,0,.2);
+}
 
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:850px){
+
+    .menu-btn{
+        display:block;
+    }
+
+    .nav-links{
+        position:absolute;
+        top:72px;
+        left:0;
+        right:0;
+        background:#fff;
+        display:none;
+        flex-direction:column;
+        align-items:flex-start;
+        padding:20px;
+        border-bottom:1px solid #ddd;
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .feature-grid,
+    .pricing-grid,
+    .shop-grid,
+    .testimonial-grid{
+        grid-template-columns:1fr;
+    }
+
+    .price-card.popular{
+        transform:none;
+    }
+
+    .modal-content{
+        grid-template-columns:1fr;
+    }
+
+    .main-photo{
+        height:350px;
+    }
+
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero h1{
+        letter-spacing:-2px;
+    }
 }
 
 </style>
 </head>
 
-
 <body>
-
 
 <!-- =========================
      HEADER
@@ -651,8 +722,11 @@ footer{
 Business<span>Pro</span>
 </div>
 
+<button class="menu-btn" onclick="toggleMenu()">
+☰
+</button>
 
-<nav id="nav">
+<nav class="nav-links" id="navLinks">
 
 <a href="#anasayfa">Ana Sayfa</a>
 
@@ -662,193 +736,53 @@ Business<span>Pro</span>
 
 <a href="#aksesuarlar">Aksesuarlar 🛍️</a>
 
-<a href="#yorumlar">Yorumlar</a>
-
 <a href="#sss">SSS</a>
 
 <a href="#iletisim">İletişim</a>
 
 </nav>
 
-
-<div class="actions">
-
-<button
-class="icon-btn"
-onclick="temaDegistir()">
-🌙
-</button>
-
-<button
-class="menu-btn"
-onclick="menuAc()">
-☰
-</button>
-
-</div>
-
 </div>
 
 </header>
-
 
 
 <!-- =========================
      HERO
 ========================= -->
 
-<section
-class="hero"
-id="anasayfa">
+<section class="hero" id="anasayfa">
+
+<div class="hero-inner">
 
 <div class="hero-content">
 
 <div class="badge">
-🚀 Yeni Nesil İşletme Sitesi
+Profesyonel Web Çözümleri
 </div>
 
 <h1>
-İşletmenizi
-<span class="gradient">
-internette büyütün.
-</span>
+İşinizi internette
+<span>profesyonel</span>
+gösterin.
 </h1>
 
 <p>
-Hızlı, modern, mobil uyumlu ve profesyonel işletme web sitesi.
+BusinessPro ile modern, hızlı, mobil uyumlu ve profesyonel
+bir web sitesine sahip olun.
 </p>
 
-<a
-href="#fiyatlar"
-class="btn btn-primary">
-Paketleri İncele →
+<div class="hero-buttons">
+
+<a href="#fiyatlar" class="btn btn-primary">
+Paketleri İncele
 </a>
 
-<a
-href="#aksesuarlar"
-class="btn btn-outline">
-🛍️ Mağazayı Gör
+<a href="#aksesuarlar" class="btn btn-secondary">
+Aksesuarları Gör 🛍️
 </a>
 
 </div>
-
-</section>
-
-
-
-<!-- =========================
-     ÖZELLİKLER
-========================= -->
-
-<section id="ozellikler">
-
-<div class="container">
-
-<div class="section-title">
-
-<h2>
-Güçlü Özellikler
-</h2>
-
-<p>
-Modern bir işletme sitesinde ihtiyacınız olan her şey.
-</p>
-
-</div>
-
-
-<div class="grid">
-
-
-<div class="card">
-
-<div class="icon">📱</div>
-
-<h3>
-Mobil Uyumlu
-</h3>
-
-<p>
-Telefon, tablet ve bilgisayarlarda uyumlu şekilde çalışır.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<div class="icon">⚡</div>
-
-<h3>
-Hızlı
-</h3>
-
-<p>
-Hafif yapı sayesinde hızlı yüklenir.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<div class="icon">🎨</div>
-
-<h3>
-Modern Tasarım
-</h3>
-
-<p>
-Profesyonel görünüm ve temiz kullanıcı deneyimi.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<div class="icon">🌙</div>
-
-<h3>
-Karanlık Mod
-</h3>
-
-<p>
-Tek tuşla açık ve koyu tema.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<div class="icon">📲</div>
-
-<h3>
-WhatsApp
-</h3>
-
-<p>
-Müşteriler doğrudan WhatsApp üzerinden ulaşabilir.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<div class="icon">🔧</div>
-
-<h3>
-Kolay Düzenleme
-</h3>
-
-<p>
-Metinleri, fiyatları ve bölümleri kolayca değiştirebilirsiniz.
-</p>
-
-</div>
-
 
 </div>
 
@@ -857,146 +791,265 @@ Metinleri, fiyatları ve bölümleri kolayca değiştirebilirsiniz.
 </section>
 
 
-
 <!-- =========================
-     FİYATLAR
+     FEATURES
 ========================= -->
 
-<section id="fiyatlar">
+<section class="features" id="ozellikler">
 
 <div class="container">
 
 <div class="section-title">
 
-<h2>
-Fiyatlandırma
-</h2>
+<h2>Özellikler</h2>
 
 <p>
-Şimdi özel indirimli fiyatlarla.
+İhtiyacınız olan temel özellikler tek yerde.
 </p>
 
-<div class="discount">
-🔥 BÜYÜK İNDİRİM!
+</div>
+
+<div class="feature-grid">
+
+<div class="feature">
+
+<div class="feature-icon">📱</div>
+
+<h3>Mobil Uyumlu</h3>
+
+<p>
+Telefon, tablet ve bilgisayarlarda düzgün çalışır.
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-icon">⚡</div>
+
+<h3>Hızlı</h3>
+
+<p>
+Hafif ve hızlı çalışan modern tasarım.
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-icon">🎨</div>
+
+<h3>Modern Tasarım</h3>
+
+<p>
+Temiz ve profesyonel kullanıcı deneyimi.
+</p>
+
 </div>
 
 </div>
 
-
-<div class="grid">
-
-
-<div class="card">
-
-<h3>
-Başlangıç
-</h3>
-
-<div class="price">
-<del>€49</del> €19
-<small>/ tek sefer</small>
 </div>
 
-<ul class="feature-list">
+</section>
 
-<li>✅ Tek sayfa site</li>
 
-<li>✅ Mobil uyumlu</li>
+<!-- =========================
+     PRICING
+========================= -->
 
-<li>✅ İletişim bölümü</li>
+<section class="pricing" id="fiyatlar">
 
-<li>✅ Temel tasarım</li>
+<div class="container">
+
+<div class="section-title">
+
+<h2>Fiyatlandırma</h2>
+
+<p>
+İhtiyacınıza uygun paketi seçin.
+</p>
+
+</div>
+
+<div class="pricing-grid">
+
+
+<div class="price-card">
+
+<h3>Başlangıç</h3>
+
+<div class="old-price">€49</div>
+
+<div class="price">€19</div>
+
+<ul>
+
+<li>✓ Profesyonel web sitesi</li>
+<li>✓ Mobil uyumlu tasarım</li>
+<li>✓ İletişim bölümü</li>
+<li>✓ WhatsApp bağlantısı</li>
 
 </ul>
 
 <a
-href="mailto:eminmehmetmemo753@gmail.com?subject=BusinessPro%20Başlangıç%20Paketi"
-class="btn btn-primary">
-
-🛒 Satın Al
-
+class="btn btn-primary"
+href="mailto:eminmehmetmemo753@gmail.com?subject=Başlangıç Paketi"
+>
+Satın Al
 </a>
 
 </div>
 
 
-
-<div class="card popular">
+<div class="price-card popular">
 
 <div class="popular-label">
-EN POPÜLER
+POPÜLER
 </div>
 
-<h3>
-Profesyonel
-</h3>
+<h3>Profesyonel</h3>
 
-<div class="price">
-<del>€99</del> €39
-<small>/ tek sefer</small>
-</div>
+<div class="old-price">€99</div>
 
-<ul class="feature-list">
+<div class="price">€39</div>
 
-<li>✅ Çok bölümlü site</li>
+<ul>
 
-<li>✅ Mobil uyumlu</li>
-
-<li>✅ Karanlık mod</li>
-
-<li>✅ WhatsApp butonu</li>
-
-<li>✅ Modern animasyonlar</li>
+<li>✓ Her şey Başlangıç paketinde</li>
+<li>✓ Daha fazla bölüm</li>
+<li>✓ Ürün galerisi</li>
+<li>✓ Özel tasarım</li>
 
 </ul>
 
 <a
-href="mailto:eminmehmetmemo753@gmail.com?subject=BusinessPro%20Profesyonel%20Paketi"
-class="btn btn-primary">
-
-🛒 Satın Al
-
+class="btn btn-primary"
+href="mailto:eminmehmetmemo753@gmail.com?subject=Profesyonel Paket"
+>
+Satın Al
 </a>
 
 </div>
 
 
+<div class="price-card">
 
-<div class="card">
+<h3>Premium</h3>
 
-<h3>
-Premium
-</h3>
+<div class="old-price">€199</div>
 
-<div class="price">
-<del>€199</del> €79
-<small>/ tek sefer</small>
-</div>
+<div class="price">€79</div>
 
-<ul class="feature-list">
+<ul>
 
-<li>✅ Özel tasarım</li>
-
-<li>✅ Gelişmiş bölümler</li>
-
-<li>✅ Özel renkler</li>
-
-<li>✅ Özel içerikler</li>
-
-<li>✅ Destek</li>
+<li>✓ Her şey Profesyonel pakette</li>
+<li>✓ Gelişmiş mağaza</li>
+<li>✓ Özel özellikler</li>
+<li>✓ Öncelikli destek</li>
 
 </ul>
 
 <a
-href="mailto:eminmehmetmemo753@gmail.com?subject=BusinessPro%20Premium%20Paketi"
-class="btn btn-primary">
-
-🛒 Satın Al
-
+class="btn btn-primary"
+href="mailto:eminmehmetmemo753@gmail.com?subject=Premium Paket"
+>
+Satın Al
 </a>
 
 </div>
 
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     ACCESSORIES
+========================= -->
+
+<section class="shop" id="aksesuarlar">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Aksesuarlar 🛍️</h2>
+
+<p>
+Ürünleri inceleyin. Ürüne dokunarak detayları ve fotoğraf galerisini açabilirsiniz.
+</p>
+
+</div>
+
+<div class="shop-grid" id="productGrid"></div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     TESTIMONIALS
+========================= -->
+
+<section class="testimonials">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Müşterilerimiz</h2>
+
+<p>
+BusinessPro hakkında bazı yorumlar.
+</p>
+
+</div>
+
+<div class="testimonial-grid">
+
+<div class="testimonial">
+
+<div class="stars">★★★★★</div>
+
+<p>
+"Site çok hızlı ve profesyonel oldu."
+</p>
+
+<strong>— Müşteri</strong>
+
+</div>
+
+
+<div class="testimonial">
+
+<div class="stars">★★★★★</div>
+
+<p>
+"Telefonda da çok güzel görünüyor."
+</p>
+
+<strong>— Müşteri</strong>
+
+</div>
+
+
+<div class="testimonial">
+
+<div class="stars">★★★★★</div>
+
+<p>
+"WhatsApp üzerinden müşterilerle iletişim çok kolay."
+</p>
+
+<strong>— Müşteri</strong>
+
+</div>
 
 </div>
 
@@ -1005,479 +1058,120 @@ class="btn btn-primary">
 </section>
 
 
-
 <!-- =========================
-     AKSESUAR MAĞAZASI
+     FAQ
 ========================= -->
 
-<section id="aksesuarlar">
+<section class="faq" id="sss">
 
 <div class="container">
 
 <div class="section-title">
 
-<h2>
-🛍️ Aksesuarlar
-</h2>
+<h2>Sık Sorulan Sorular</h2>
 
 <p>
-Bir ürüne basarak fotoğraflarını, fiyatını ve sipariş seçeneğini görebilirsiniz.
+Merak edilenler.
 </p>
 
 </div>
 
 
-<p class="shop-note">
+<details class="faq-item">
 
-Ürün fotoğrafları ürün kartlarının içinde gösterilir.
-Daha fazla gerçek ürün fotoğrafı eklemek için galeri sistemini kullanabilirsiniz.
+<summary>Site mobil cihazlarda çalışır mı?</summary>
 
+<p>
+Evet. Site telefon, tablet ve bilgisayarlara uyumludur.
 </p>
 
+</details>
 
-<div class="grid">
 
+<details class="faq-item">
 
-<!-- GUCCI 1 -->
+<summary>Ürün fotoğrafları eklenebilir mi?</summary>
 
-<div
-class="card product-card"
-onclick="urunAc(0)">
+<p>
+Evet. Her ürün için birden fazla fotoğraf eklenebilir.
+</p>
 
-<img
-src="gucci1.jpg"
-class="product-image"
-alt="Gucci bel çantası">
+</details>
 
-<div class="product-info">
 
-<span class="product-badge">
-Bel Çantası
-</span>
+<details class="faq-item">
 
-<h3>
-Gucci Bel Çantası
-</h3>
+<summary>WhatsApp üzerinden sipariş alabilir miyim?</summary>
 
-<div class="product-price">
-€120
-</div>
+<p>
+Evet. Ürün detayındaki WhatsApp butonu doğrudan WhatsApp konuşmasını açar.
+</p>
 
-<button class="btn btn-primary">
-Ürünü Gör →
-</button>
+</details>
 
-</div>
 
-</div>
+<details class="faq-item">
 
+<summary>Kendi alan adımı kullanabilir miyim?</summary>
 
+<p>
+Evet. İleride kendi alan adınızı bağlayabilirsiniz.
+</p>
 
-<!-- GUCCI 2 -->
-
-<div
-class="card product-card"
-onclick="urunAc(1)">
-
-<img
-src="gucci2.jpg"
-class="product-image"
-alt="Gucci bel çantası">
-
-<div class="product-info">
-
-<span class="product-badge">
-Bel Çantası
-</span>
-
-<h3>
-Gucci Bel Çantası
-</h3>
-
-<div class="product-price">
-€100
-</div>
-
-<button class="btn btn-primary">
-Ürünü Gör →
-</button>
-
-</div>
-
-</div>
-
-
-
-<!-- LV -->
-
-<div
-class="card product-card"
-onclick="urunAc(2)">
-
-<img
-src="lv-kemer.jpg"
-class="product-image"
-alt="Louis Vuitton kemer">
-
-<div class="product-info">
-
-<span class="product-badge">
-Kemer
-</span>
-
-<h3>
-Louis Vuitton Kemer
-</h3>
-
-<div class="product-price">
-€50
-</div>
-
-<button class="btn btn-primary">
-Ürünü Gör →
-</button>
-
-</div>
-
-</div>
-
-
-
-<!-- HERMES -->
-
-<div
-class="card product-card"
-onclick="urunAc(3)">
-
-<img
-src="hermes-kemer.jpg"
-class="product-image"
-alt="Hermès kemer">
-
-<div class="product-info">
-
-<span class="product-badge">
-Kemer
-</span>
-
-<h3>
-Hermès Kemer
-</h3>
-
-<div class="product-price">
-€45
-</div>
-
-<button class="btn btn-primary">
-Ürünü Gör →
-</button>
-
-</div>
-
-</div>
-
-
-
-<!-- SİYAH KEMER -->
-
-<div
-class="card product-card"
-onclick="urunAc(4)">
-
-<img
-src="siyah-kemer.jpg"
-class="product-image"
-alt="Siyah kemer">
-
-<div class="product-info">
-
-<span class="product-badge">
-Kemer
-</span>
-
-<h3>
-Siyah Kemer
-</h3>
-
-<div class="product-price">
-€50
-</div>
-
-<button class="btn btn-primary">
-Ürünü Gör →
-</button>
-
-</div>
-
-</div>
-
-
-
-<!-- LACOSTE -->
-
-<div
-class="card product-card"
-onclick="urunAc(5)">
-
-<div
-style="
-height:270px;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:80px;
-background:linear-gradient(135deg,#e2e8f0,#cbd5e1);
-">
-
-⌚
-
-</div>
-
-<div class="product-info">
-
-<span class="product-badge">
-Bileklik
-</span>
-
-<h3>
-Lacoste Gri Bileklik
-</h3>
-
-<div class="product-price">
-€29
-</div>
-
-<button class="btn btn-primary">
-Ürünü Gör →
-</button>
-
-</div>
-
-</div>
-
-
-</div>
+</details>
 
 </div>
 
 </section>
 
 
-
 <!-- =========================
-     YORUMLAR
+     CONTACT
 ========================= -->
 
-<section id="yorumlar">
+<section class="contact" id="iletisim">
 
 <div class="container">
 
 <div class="section-title">
 
-<h2>
-Müşteriler Ne Diyor?
-</h2>
+<h2>İletişim</h2>
 
 <p>
-Demo için örnek yorumlar.
+Bizimle iletişime geçin.
 </p>
 
 </div>
 
 
-<div class="grid">
+<div class="contact-grid">
 
+<div class="contact-info">
 
-<div class="card testimonial">
-
-<div class="stars">
-★★★★★
-</div>
+<h3>BusinessPro</h3>
 
 <p>
-“Çok modern ve kullanımı gerçekten kolay.”
-</p>
-
-<br>
-
-<strong>
-Örnek Müşteri
-</strong>
-
-</div>
-
-
-<div class="card testimonial">
-
-<div class="stars">
-★★★★★
-</div>
-
-<p>
-“Telefonumda da bilgisayarımda da harika görünüyor.”
-</p>
-
-<br>
-
-<strong>
-Örnek Müşteri
-</strong>
-
-</div>
-
-
-<div class="card testimonial">
-
-<div class="stars">
-★★★★★
-</div>
-
-<p>
-“İşletmem için profesyonel bir görünüm sağladı.”
-</p>
-
-<br>
-
-<strong>
-Örnek Müşteri
-</strong>
-
-</div>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- =========================
-     SSS
-========================= -->
-
-<section id="sss">
-
-<div class="container">
-
-<div class="section-title">
-
-<h2>
-Sık Sorulan Sorular
-</h2>
-
-<p>
-Merak edilen bazı sorular.
+Web sitesi, ürün ve dijital çözümler için iletişime geçebilirsiniz.
 </p>
 
 </div>
 
 
-<div class="faq">
+<div class="contact-card">
 
-
-<details>
-
-<summary>
-Bu site telefonda çalışır mı?
-</summary>
-
-<p>
-Evet. Tasarım mobil cihazlara göre optimize edilmiştir.
-</p>
-
-</details>
-
-
-<details>
-
-<summary>
-Metinleri değiştirebilir miyim?
-</summary>
-
-<p>
-Evet. HTML dosyasındaki metinleri değiştirebilirsiniz.
-</p>
-
-</details>
-
-
-<details>
-
-<summary>
-Renkleri değiştirebilir miyim?
-</summary>
-
-<p>
-Evet. CSS bölümündeki renkleri değiştirebilirsiniz.
-</p>
-
-</details>
-
-
-<details>
-
-<summary>
-Satın aldıktan sonra ne olacak?
-</summary>
-
-<p>
-Satın alma butonuna bastığınızda e-posta ile sipariş talebi oluşturabilirsiniz.
-</p>
-
-</details>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- =========================
-     İLETİŞİM
-========================= -->
-
-<section id="iletisim">
-
-<div class="container">
-
-<div class="contact">
-
-<div class="section-title">
-
-<h2>
-Satın Al veya İletişime Geç
-</h2>
-
-<p>
-Paketlerden birini seçin veya WhatsApp üzerinden bize ulaşın.
-</p>
-
-</div>
-
-
-<div class="order-box">
-
-<a
-href="mailto:eminmehmetmemo753@gmail.com?subject=BusinessPro%20Sipariş"
-class="btn btn-primary">
-
-📧 E-posta ile Sipariş
-
+<a href="mailto:eminmehmetmemo753@gmail.com">
+📧 eminmehmetmemo753@gmail.com
 </a>
 
+<a href="tel:+32466418624">
+📞 +32 466 41 86 24
+</a>
 
 <a
-href="https://wa.me/32466418624?text=Merhaba%2C%20BusinessPro%20web%20sitesi%20hakkında%20bilgi%20almak%20istiyorum."
+href="https://wa.me/32466418624"
 target="_blank"
-class="btn btn-success">
-
+>
 💬 WhatsApp'tan Yaz
-
 </a>
 
 </div>
@@ -1489,465 +1183,521 @@ class="btn btn-success">
 </section>
 
 
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
-<p>
-© 2026 BusinessPro. Tüm hakları saklıdır.
-</p>
-
-<p>
-Modern işletme web sitesi şablonu.
-</p>
+© 2026 BusinessPro — Tüm hakları saklıdır.
 
 </footer>
 
 
+<!-- =========================
+     WHATSAPP FLOATING
+========================= -->
 
 <a
-href="https://wa.me/32466418624?text=Merhaba%2C%20BusinessPro%20web%20sitesi%20hakkında%20bilgi%20almak%20istiyorum."
+class="whatsapp-floating"
+href="https://wa.me/32466418624"
 target="_blank"
-class="whatsapp">
-
+aria-label="WhatsApp"
+>
 💬
-
 </a>
 
 
-
 <!-- =========================
-     ÜRÜN DETAY MODALI
+     PRODUCT MODAL
 ========================= -->
 
-<div
-class="modal"
-id="urunModal"
-onclick="modalDisinaTikla(event)">
-
+<div class="modal" id="productModal">
 
 <div class="modal-box">
 
-
 <button
-class="close"
-onclick="modalKapat()">
-
+class="close-modal"
+onclick="closeModal()"
+>
 ×
-
 </button>
 
+<div class="modal-content">
 
 <div>
 
+<div class="main-photo">
+
 <img
-id="modalImage"
-class="main-product-photo"
+id="modalMainImage"
 src=""
-alt="">
-
-
-<div class="gallery-title">
-📸 Ürün fotoğrafları
+alt=""
+>
+    
 </div>
-
 
 <div
-class="gallery"
-id="gallery">
-</div>
+class="thumbnails"
+id="modalThumbnails"
+></div>
 
 </div>
-
 
 
 <div class="modal-info">
 
-
-<span
-id="modalBrand"
-class="product-badge">
-</span>
-
-
-<h2
-id="modalTitle">
-</h2>
-
+<h2 id="modalTitle"></h2>
 
 <div
+class="modal-price"
 id="modalPrice"
-class="modal-price">
-</div>
-
+></div>
 
 <p
-id="modalDescription">
-</p>
-
-
-<a
-id="modalWhatsapp"
-class="btn btn-success"
-target="_blank">
-
-💬 WhatsApp'tan Satın Al
-
-</a>
-
+class="modal-description"
+id="modalDescription"
+></p>
 
 <button
-class="btn btn-outline"
-onclick="modalKapat()">
-
-Kapat
-
+class="whatsapp-btn"
+onclick="buyProduct()"
+>
+💬 WhatsApp'tan Satın Al
 </button>
 
-
-</div>
-
-
 </div>
 
 </div>
 
+</div>
+
+</div>
 
 
 <script>
 
-
-/* ===================================
+/* =================================
    ÜRÜNLER
-=================================== */
-
+================================= */
 
 const urunler = [
 
-
 {
-title:"Gucci Bel Çantası",
-brand:"Bel Çantası",
-price:"€120",
+    id:1,
 
-images:[
-"gucci1.jpg"
-],
+    name:"Gucci Ürün 1",
 
-description:
-"Gucci bel çantası. Ürün hakkında detaylı bilgi, beden ve stok durumunu WhatsApp üzerinden sorabilirsiniz."
+    price:"€120",
+
+    description:
+    "Gucci ürün. Detaylı bilgi ve satın alma için WhatsApp üzerinden iletişime geçebilirsiniz.",
+
+    images:[
+        "gucci1.jpg"
+    ]
 },
 
 
-
 {
-title:"Gucci Bel Çantası",
-brand:"Bel Çantası",
-price:"€100",
+    id:2,
 
-images:[
-"gucci2.jpg"
-],
+    name:"Gucci Ürün 2",
 
-description:
-"Gucci bel çantası. Ürün hakkında detaylı bilgi, beden ve stok durumunu WhatsApp üzerinden sorabilirsiniz."
+    price:"€100",
+
+    description:
+    "Gucci ürün. Detaylı bilgi ve satın alma için WhatsApp üzerinden iletişime geçebilirsiniz.",
+
+    images:[
+        "gucci2.jpg"
+    ]
 },
 
 
-
 {
-title:"Louis Vuitton Kemer",
-brand:"Kemer",
-price:"€50",
+    id:3,
 
-images:[
-"lv-kemer.jpg"
-],
+    name:"Louis Vuitton Kemer",
 
-description:
-"Louis Vuitton kemer. Beden ve stok bilgisi için WhatsApp üzerinden iletişime geçebilirsiniz."
+    price:"€50",
+
+    description:
+    "Louis Vuitton kemer. Detaylı bilgi ve satın alma için WhatsApp üzerinden iletişime geçebilirsiniz.",
+
+    images:[
+        "lv-kemer.jpg"
+    ]
 },
 
 
-
 {
-title:"Hermès Kemer",
-brand:"Kemer",
-price:"€45",
+    id:4,
 
-images:[
-"hermes-kemer.jpg"
-],
+    name:"Hermès Kemer",
 
-description:
-"Hermès kemer. Beden ve stok bilgisi için WhatsApp üzerinden iletişime geçebilirsiniz."
+    price:"€45",
+
+    description:
+    "Hermès kemer. Detaylı bilgi ve satın alma için WhatsApp üzerinden iletişime geçebilirsiniz.",
+
+    images:[
+        "hermes-kemer.jpg"
+    ]
 },
 
 
-
 {
-title:"Siyah Kemer",
-brand:"Kemer",
-price:"€50",
+    id:5,
 
-images:[
-"siyah-kemer.jpg"
-],
+    name:"Siyah Kemer",
 
-description:
-"Siyah kemer. Beden ve stok bilgisi için WhatsApp üzerinden iletişime geçebilirsiniz."
+    price:"€50",
+
+    description:
+    "Siyah kemer. Detaylı bilgi ve satın alma için WhatsApp üzerinden iletişime geçebilirsiniz.",
+
+    images:[
+        "siyah-kemer.jpg"
+    ]
 },
 
 
-
 {
-title:"Lacoste Gri Bileklik",
-brand:"Bileklik",
-price:"€29",
+    id:6,
 
-images:[],
+    name:"Lacoste Gri Bileklik",
 
-description:
-"Lacoste gri bileklik. Kendi ürün fotoğrafınızı eklediğinizde bu ürüne de galeri fotoğrafları ekleyebilirsiniz."
+    price:"€29",
+
+    description:
+    "Lacoste gri bileklik. Detaylı bilgi ve satın alma için WhatsApp üzerinden iletişime geçebilirsiniz.",
+
+    images:[]
 }
-
 
 ];
 
 
+/* =================================
+   ÜRÜNLERİ OLUŞTUR
+================================= */
 
-/* ===================================
-   ÜRÜN AÇ
-=================================== */
-
-
-function urunAc(index){
-
-const urun = urunler[index];
-
-document.getElementById("modalTitle").textContent =
-urun.title;
-
-document.getElementById("modalBrand").textContent =
-urun.brand;
-
-document.getElementById("modalPrice").textContent =
-urun.price;
-
-document.getElementById("modalDescription").textContent =
-urun.description;
+const productGrid =
+document.getElementById("productGrid");
 
 
+function renderProducts(){
 
-const gallery =
-document.getElementById("gallery");
+    productGrid.innerHTML="";
 
-gallery.innerHTML = "";
+    urunler.forEach(product => {
 
+        const card =
+        document.createElement("div");
 
+        card.className="product-card";
 
-/* FOTOĞRAFLAR */
+        const firstImage =
+        product.images.length
+        ? product.images[0]
+        : "";
 
-if(urun.images.length > 0){
+        card.innerHTML=`
 
-document.getElementById("modalImage").src =
-urun.images[0];
+            <div class="product-image">
 
+                ${
+                    firstImage
 
-urun.images.forEach(function(image,index){
+                    ?
 
-const img =
-document.createElement("img");
+                    `<img
+                        src="${firstImage}"
+                        alt="${product.name}"
+                        onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=&quot;color:#777;font-weight:bold;&quot;>Fotoğraf ekleniyor...</div>';"
+                    >`
 
-img.src = image;
+                    :
 
-img.className =
-"gallery-thumb";
+                    `<div style="color:#777;font-weight:bold;font-size:18px;">
+                        📷 Fotoğraf
+                    </div>`
+                }
 
+            </div>
 
-if(index === 0){
+            <div class="product-info">
 
-img.classList.add("active");
+                <h3>
+                    ${product.name}
+                </h3>
 
-}
+                <p>
+                    Detayları görmek için tıklayın.
+                </p>
 
+                <div class="product-price">
+                    ${product.price}
+                </div>
 
-img.onclick = function(){
+                <button
+                    class="product-btn"
+                    onclick="openProduct(${product.id})"
+                >
+                    Ürünü İncele
+                </button>
 
-document.getElementById("modalImage").src =
-image;
+            </div>
+        `;
 
+        card.onclick=function(e){
 
-document
-.querySelectorAll(".gallery-thumb")
-.forEach(function(item){
+            if(e.target.tagName==="BUTTON"){
+                return;
+            }
 
-item.classList.remove("active");
+            openProduct(product.id);
 
-});
+        };
 
+        productGrid.appendChild(card);
 
-img.classList.add("active");
-
-};
-
-
-gallery.appendChild(img);
-
-});
-
-
-}else{
-
-document.getElementById("modalImage").src = "";
-
-gallery.innerHTML =
-"<p style='padding:10px;color:#64748b;'>Ürün fotoğrafı yakında eklenecek.</p>";
+    });
 
 }
 
 
+/* =================================
+   MODAL
+================================= */
 
-/* WHATSAPP */
+const modal =
+document.getElementById("productModal");
 
-const mesaj =
-"Merhaba, " +
-urun.title +
-" (" +
-urun.price +
-") hakkında bilgi almak istiyorum.";
+const modalMainImage =
+document.getElementById("modalMainImage");
 
+const modalTitle =
+document.getElementById("modalTitle");
 
-document.getElementById("modalWhatsapp").href =
-"https://wa.me/32466418624?text=" +
-encodeURIComponent(mesaj);
+const modalPrice =
+document.getElementById("modalPrice");
 
+const modalDescription =
+document.getElementById("modalDescription");
 
+const modalThumbnails =
+document.getElementById("modalThumbnails");
 
-/* MODAL */
-
-document
-.getElementById("urunModal")
-.classList.add("active");
+let selectedProduct=null;
 
 
-document.body.style.overflow =
-"hidden";
+function openProduct(id){
+
+    const product =
+    urunler.find(item => item.id===id);
+
+    if(!product) return;
+
+    selectedProduct=product;
+
+    modalTitle.textContent=
+    product.name;
+
+    modalPrice.textContent=
+    product.price;
+
+    modalDescription.textContent=
+    product.description;
+
+    modalThumbnails.innerHTML="";
+
+
+    if(product.images.length){
+
+        modalMainImage.src=
+        product.images[0];
+
+        modalMainImage.alt=
+        product.name;
+
+
+        product.images.forEach((image,index)=>{
+
+            const thumb=
+            document.createElement("div");
+
+            thumb.className=
+            "thumbnail";
+
+            if(index===0){
+                thumb.classList.add("active");
+            }
+
+            thumb.innerHTML=`
+
+                <img
+                    src="${image}"
+                    alt="${product.name}"
+                >
+
+            `;
+
+            thumb.onclick=function(){
+
+                modalMainImage.src=image;
+
+                document
+                .querySelectorAll(".thumbnail")
+                .forEach(t=>{
+                    t.classList.remove("active");
+                });
+
+                thumb.classList.add("active");
+
+            };
+
+            modalThumbnails.appendChild(thumb);
+
+        });
+
+    }else{
+
+        modalMainImage.removeAttribute("src");
+
+        modalMainImage.alt=
+        "Fotoğraf yakında eklenecek";
+
+        modalMainImage.style.display="none";
+
+        modalThumbnails.innerHTML=`
+
+            <div style="
+                padding:20px;
+                color:#777;
+                background:#f5f5f5;
+                border-radius:12px;
+            ">
+                Bu ürünün fotoğrafı yakında eklenecek.
+            </div>
+
+        `;
+
+    }
+
+    modal.classList.add("active");
+
+    document.body.style.overflow="hidden";
 
 }
 
 
-
-/* ===================================
+/* =================================
    MODAL KAPAT
-=================================== */
+================================= */
 
+function closeModal(){
 
-function modalKapat(){
+    modal.classList.remove("active");
 
-document
-.getElementById("urunModal")
-.classList.remove("active");
+    document.body.style.overflow="";
 
-document.body.style.overflow = "";
-
-}
-
-
-
-function modalDisinaTikla(event){
-
-if(event.target.id === "urunModal"){
-
-modalKapat();
-
-}
+    modalMainImage.style.display="block";
 
 }
 
 
+/* =================================
+   MODAL DIŞINA TIKLAMA
+================================= */
 
-/* ===================================
-   TEMA
-=================================== */
+modal.addEventListener("click",function(e){
 
+    if(e.target===modal){
 
-function temaDegistir(){
+        closeModal();
 
-document.body.classList.toggle("dark");
-
-
-const button =
-document.querySelector(".icon-btn");
-
-
-if(
-document.body.classList.contains("dark")
-){
-
-button.textContent = "☀️";
-
-}else{
-
-button.textContent = "🌙";
-
-}
-
-}
-
-
-
-/* ===================================
-   MOBİL MENÜ
-=================================== */
-
-
-function menuAc(){
-
-document
-.getElementById("nav")
-.classList.toggle("active");
-
-}
-
-
-
-document
-.querySelectorAll("nav a")
-.forEach(function(link){
-
-link.addEventListener(
-"click",
-function(){
-
-document
-.getElementById("nav")
-.classList.remove("active");
-
-}
-);
+    }
 
 });
 
 
+/* =================================
+   ESC
+================================= */
 
-/* ESC İLE KAPAT */
+document.addEventListener("keydown",function(e){
 
-document.addEventListener(
-"keydown",
-function(event){
+    if(e.key==="Escape"){
 
-if(event.key === "Escape"){
+        closeModal();
 
-modalKapat();
+    }
+
+});
+
+
+/* =================================
+   WHATSAPP SATIN AL
+================================= */
+
+function buyProduct(){
+
+    if(!selectedProduct) return;
+
+    const message =
+    `Merhaba, ${selectedProduct.name} ürününü satın almak istiyorum. Fiyat: ${selectedProduct.price}`;
+
+    const url =
+    "https://wa.me/32466418624?text="
+    +
+    encodeURIComponent(message);
+
+    window.open(url,"_blank");
 
 }
 
-}
-);
 
+/* =================================
+   MOBİL MENÜ
+================================= */
+
+function toggleMenu(){
+
+    document
+    .getElementById("navLinks")
+    .classList.toggle("active");
+
+}
+
+
+/* =================================
+   MENÜDEN TIKLAYINCA KAPAT
+================================= */
+
+document
+.querySelectorAll(".nav-links a")
+.forEach(link=>{
+
+    link.addEventListener("click",()=>{
+
+        document
+        .getElementById("navLinks")
+        .classList.remove("active");
+
+    });
+
+});
+
+
+/* =================================
+   BAŞLAT
+================================= */
+
+renderProducts();
 
 </script>
-
 
 </body>
 </html>
