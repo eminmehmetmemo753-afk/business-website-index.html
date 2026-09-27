@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="tr">
 <head>
@@ -32,14 +34,14 @@ body{
   background:var(--bg);
   color:var(--text);
   line-height:1.6;
+  transition:.3s;
 }
 
 header{
   position:sticky;
   top:0;
   z-index:1000;
-}
-    background:rgba(255,255,255,.92);
+  background:rgba(255,255,255,.92);
   backdrop-filter:blur(12px);
   border-bottom:1px solid var(--border);
 }
@@ -152,6 +154,7 @@ nav a:hover{
   font-weight:700;
   margin:5px;
   transition:.25s;
+  cursor:pointer;
 }
 
 .btn-primary{
@@ -195,6 +198,16 @@ section{
 
 .section-title p{
   color:var(--muted);
+}
+
+.discount{
+  display:inline-block;
+  margin-top:10px;
+  padding:10px 18px;
+  border-radius:50px;
+  background:#fee2e2;
+  color:#dc2626;
+  font-weight:800;
 }
 
 .grid{
@@ -243,6 +256,12 @@ section{
   font-size:42px;
   font-weight:800;
   margin:20px 0;
+}
+
+.price del{
+  font-size:22px;
+  color:#94a3b8;
+  margin-right:8px;
 }
 
 .price small{
@@ -535,16 +554,24 @@ footer{
 
     <div class="section-title">
       <h2>Fiyatlandırma</h2>
-      <p>İhtiyacınıza uygun paketi seçin.</p>
+
+      <p>
+        İhtiyacınıza uygun paketi seçin.
+      </p>
+
+      <div class="discount">
+        🔥 BÜYÜK İNDİRİM! Sınırlı süreyle özel fiyatlar.
+      </div>
     </div>
 
     <div class="grid">
 
       <div class="card">
+
         <h3>Başlangıç</h3>
 
         <div class="price">
-          €49
+          <del>€49</del> €19
           <small>/ tek sefer</small>
         </div>
 
@@ -558,6 +585,7 @@ footer{
         <a href="#iletisim" class="btn btn-primary">
           Başla
         </a>
+
       </div>
 
       <div class="card popular">
@@ -569,7 +597,7 @@ footer{
         <h3>Profesyonel</h3>
 
         <div class="price">
-          €99
+          <del>€99</del> €39
           <small>/ tek sefer</small>
         </div>
 
@@ -584,6 +612,7 @@ footer{
         <a href="#iletisim" class="btn btn-primary">
           Başla
         </a>
+
       </div>
 
       <div class="card">
@@ -591,7 +620,7 @@ footer{
         <h3>Premium</h3>
 
         <div class="price">
-          €199
+          <del>€199</del> €79
           <small>/ tek sefer</small>
         </div>
 
@@ -606,6 +635,7 @@ footer{
         <a href="#iletisim" class="btn btn-primary">
           Başla
         </a>
+
       </div>
 
     </div>
@@ -740,10 +770,11 @@ footer{
 </footer>
 
 <a
-  href="https://wa.me/"
+  href="https://wa.me/32466418624"
   target="_blank"
+  rel="noopener"
   class="whatsapp"
-  title="WhatsApp"
+  title="WhatsApp'tan iletişime geç"
 >
   💬
 </a>
@@ -754,8 +785,7 @@ function temaDegistir(){
 
   document.body.classList.toggle("dark");
 
-  const button =
-    document.querySelector(".icon-btn");
+  const button = document.querySelector(".icon-btn");
 
   if(document.body.classList.contains("dark")){
     button.textContent = "☀️";
@@ -791,4 +821,3 @@ document
 
 </body>
 </html>
- 
