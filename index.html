@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="tr">
 <head>
@@ -8,9 +6,10 @@
 
 <title>BusinessPro | Modern İşletme Web Sitesi</title>
 
-<meta name="description" content="Modern, hızlı ve mobil uyumlu işletme web sitesi şablonu.">
+<meta name="description" content="Modern, hızlı ve mobil uyumlu işletme web sitesi.">
 
 <style>
+
 :root{
   --bg:#f8fafc;
   --card:#ffffff;
@@ -42,7 +41,7 @@ header{
   position:sticky;
   top:0;
   z-index:1000;
-  background:rgba(255,255,255,.92);
+  background:rgba(255,255,255,.94);
   backdrop-filter:blur(12px);
   border-bottom:1px solid var(--border);
 }
@@ -67,7 +66,7 @@ header{
 
 nav{
   display:flex;
-  gap:25px;
+  gap:18px;
   align-items:center;
 }
 
@@ -84,7 +83,6 @@ nav a:hover{
 .actions{
   display:flex;
   gap:8px;
-  align-items:center;
 }
 
 .icon-btn,
@@ -108,6 +106,7 @@ nav a:hover{
   justify-content:center;
   text-align:center;
   padding:80px 20px;
+
   background:
     radial-gradient(circle at top left,#dbeafe,transparent 35%),
     radial-gradient(circle at bottom right,#ede9fe,transparent 35%);
@@ -174,10 +173,6 @@ nav a:hover{
   color:var(--text);
   border:1px solid var(--border);
   background:var(--card);
-}
-
-.btn-outline:hover{
-  transform:translateY(-3px);
 }
 
 .btn-success{
@@ -372,6 +367,177 @@ footer{
   z-index:999;
 }
 
+
+/* =========================
+   MAĞAZA
+========================= */
+
+.shop-note{
+  max-width:800px;
+  margin:-25px auto 35px;
+  text-align:center;
+  color:var(--muted);
+}
+
+.product-card{
+  padding:0;
+  overflow:hidden;
+  cursor:pointer;
+}
+
+.product-image{
+  width:100%;
+  height:270px;
+  object-fit:cover;
+  display:block;
+  background:#f1f5f9;
+}
+
+.product-info{
+  padding:22px;
+}
+
+.product-badge{
+  display:inline-block;
+  padding:5px 10px;
+  border-radius:20px;
+  background:#eef2ff;
+  color:#3730a3;
+  font-size:12px;
+  font-weight:700;
+}
+
+.product-info h3{
+  margin-top:10px;
+}
+
+.product-price{
+  font-size:28px;
+  font-weight:800;
+  margin:12px 0;
+}
+
+.product-card .btn{
+  width:calc(100% - 10px);
+}
+
+
+/* =========================
+   ÜRÜN DETAY
+========================= */
+
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(2,6,23,.78);
+  z-index:2000;
+  padding:20px;
+  overflow:auto;
+}
+
+.modal.active{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.modal-box{
+  width:min(950px,100%);
+  background:var(--card);
+  border-radius:24px;
+  overflow:hidden;
+  position:relative;
+  box-shadow:0 25px 80px rgba(0,0,0,.35);
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+}
+
+.close{
+  position:absolute;
+  right:15px;
+  top:12px;
+  width:42px;
+  height:42px;
+  border:0;
+  border-radius:50%;
+  background:rgba(15,23,42,.8);
+  color:white;
+  font-size:27px;
+  cursor:pointer;
+  z-index:5;
+}
+
+
+/* BÜYÜK FOTOĞRAF */
+
+.main-product-photo{
+  width:100%;
+  height:500px;
+  object-fit:contain;
+  background:#f1f5f9;
+  display:block;
+}
+
+
+/* FOTO GALERİ */
+
+.gallery{
+  padding:15px;
+  display:flex;
+  gap:10px;
+  overflow-x:auto;
+  background:var(--card);
+}
+
+.gallery-thumb{
+  width:75px;
+  height:75px;
+  min-width:75px;
+  object-fit:cover;
+  border-radius:10px;
+  border:2px solid transparent;
+  cursor:pointer;
+  background:#f1f5f9;
+}
+
+.gallery-thumb.active{
+  border-color:var(--primary);
+}
+
+
+/* ÜRÜN BİLGİ */
+
+.modal-info{
+  padding:35px;
+}
+
+.modal-info h2{
+  font-size:34px;
+  margin:10px 0;
+}
+
+.modal-info p{
+  color:var(--muted);
+  margin:15px 0 25px;
+}
+
+.modal-price{
+  font-size:40px;
+  font-weight:800;
+  margin:15px 0;
+}
+
+.gallery-title{
+  font-size:13px;
+  font-weight:700;
+  color:var(--muted);
+  padding:15px 15px 0;
+}
+
+
+/* DARK */
+
 .dark{
   --bg:#0f172a;
   --card:#1e293b;
@@ -396,16 +562,23 @@ footer{
   color:#bfdbfe;
 }
 
+
+/* ANIMATION */
+
 @keyframes show{
   from{
     opacity:0;
     transform:translateY(30px);
   }
+
   to{
     opacity:1;
     transform:translateY(0);
   }
 }
+
+
+/* MOBİL */
 
 @media(max-width:800px){
 
@@ -440,431 +613,1341 @@ footer{
   section{
     padding:65px 20px;
   }
-}
-</style>
-</head>
 
-<body>
+  .modal-box{
+    grid-template-columns:1fr;
+  }
 
-<header>
-  <div class="navbar">
+  .main-product-photo{
+    height:330px;
+  }
 
-    <div class="logo">
-      Business<span>Pro</span>
-    </div>
+  .modal-info{
+    padding:25px;
+  }
 
-    <nav id="nav">
-      <a href="#anasayfa">Ana Sayfa</a>
-      <a href="#ozellikler">Özellikler</a>
-      <a href="#fiyatlar">Fiyatlar</a>
-      <a href="#yorumlar">Yorumlar</a>
-      <a href="#sss">SSS</a>
-      <a href="#iletisim">İletişim</a>
-    </nav>
-
-    <div class="actions">
-      <button class="icon-btn" onclick="temaDegistir()">🌙</button>
-      <button class="menu-btn" onclick="menuAc()">☰</button>
-    </div>
-
-  </div>
-</header>
-
-<section class="hero" id="anasayfa">
-
-  <div class="hero-content">
-
-    <div class="badge">
-      🚀 Yeni Nesil İşletme Sitesi
-    </div>
-
-    <h1>
-      İşletmenizi <span class="gradient">internette büyütün.</span>
-    </h1>
-
-    <p>
-      Hızlı, modern, mobil uyumlu ve profesyonel işletme web sitesi.
-      Kodlama bilgisi olmadan kolayca düzenleyin.
-    </p>
-
-    <a href="#fiyatlar" class="btn btn-primary">
-      Paketleri İncele →
-    </a>
-
-    <a href="#iletisim" class="btn btn-outline">
-      İletişime Geç
-    </a>
-
-  </div>
-
-</section>
-
-<section id="ozellikler">
-
-  <div class="container">
-
-    <div class="section-title">
-      <h2>Güçlü Özellikler</h2>
-      <p>Modern bir işletme sitesinde ihtiyacınız olan her şey.</p>
-    </div>
-
-    <div class="grid">
-
-      <div class="card">
-        <div class="icon">📱</div>
-        <h3>Mobil Uyumlu</h3>
-        <p>
-          Telefon, tablet ve bilgisayarlarda uyumlu şekilde çalışır.
-        </p>
-      </div>
-
-      <div class="card">
-        <div class="icon">⚡</div>
-        <h3>Hızlı</h3>
-        <p>
-          Hafif yapı sayesinde hızlı yüklenir.
-        </p>
-      </div>
-
-      <div class="card">
-        <div class="icon">🎨</div>
-        <h3>Modern Tasarım</h3>
-        <p>
-          Profesyonel görünüm ve temiz kullanıcı deneyimi.
-        </p>
-      </div>
-
-      <div class="card">
-        <div class="icon">🌙</div>
-        <h3>Karanlık Mod</h3>
-        <p>
-          Tek tuşla açık ve koyu tema arasında geçiş yapabilirsiniz.
-        </p>
-      </div>
-
-      <div class="card">
-        <div class="icon">📲</div>
-        <h3>WhatsApp</h3>
-        <p>
-          Müşteriler doğrudan WhatsApp üzerinden iletişime geçebilir.
-        </p>
-      </div>
-
-      <div class="card">
-        <div class="icon">🔧</div>
-        <h3>Kolay Düzenleme</h3>
-        <p>
-          Metinleri, fiyatları ve bölümleri kolayca değiştirebilirsiniz.
-        </p>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<section id="fiyatlar">
-
-  <div class="container">
-
-    <div class="section-title">
-
-      <h2>Fiyatlandırma</h2>
-
-      <p>
-        Şimdi özel indirimli fiyatlarla.
-      </p>
-
-      <div class="discount">
-        🔥 BÜYÜK İNDİRİM!
-      </div>
-
-    </div>
-
-    <div class="grid">
-
-      <div class="card">
-
-        <h3>Başlangıç</h3>
-
-        <div class="price">
-          <del>€49</del> €19
-          <small>/ tek sefer</small>
-        </div>
-
-        <ul class="feature-list">
-          <li>✅ Tek sayfa site</li>
-          <li>✅ Mobil uyumlu</li>
-          <li>✅ İletişim bölümü</li>
-          <li>✅ Temel tasarım</li>
-        </ul>
-
-        <a
-          href="mailto:eminmehmetmemo753@gmail.com?subject=BusinessPro%20Başlangıç%20Paketi"
-          class="btn btn-primary"
-        >
-          🛒 Satın Al
-        </a>
-
-      </div>
-
-      <div class="card popular">
-
-        <div class="popular-label">
-          EN POPÜLER
-        </div>
-
-        <h3>Profesyonel</h3>
-
-        <div class="price">
-          <del>€99</del> €39
-          <small>/ tek sefer</small>
-        </div>
-
-        <ul class="feature-list">
-          <li>✅ Çok bölümlü site</li>
-          <li>✅ Mobil uyumlu</li>
-          <li>✅ Karanlık mod</li>
-          <li>✅ WhatsApp butonu</li>
-          <li>✅ Modern animasyonlar</li>
-        </ul>
-
-        <a
-          href="mailto:eminmehmetmemo753@gmail.com?subject=BusinessPro%20Profesyonel%20Paketi"
-          class="btn btn-primary"
-        >
-          🛒 Satın Al
-        </a>
-
-      </div>
-
-      <div class="card">
-
-        <h3>Premium</h3>
-
-        <div class="price">
-          <del>€199</del> €79
-          <small>/ tek sefer</small>
-        </div>
-
-        <ul class="feature-list">
-          <li>✅ Özel tasarım</li>
-          <li>✅ Gelişmiş bölümler</li>
-          <li>✅ Özel renkler</li>
-          <li>✅ Özel içerikler</li>
-          <li>✅ Destek</li>
-        </ul>
-
-        <a
-          href="mailto:eminmehmetmemo753@gmail.com?subject=BusinessPro%20Premium%20Paketi"
-          class="btn btn-primary"
-        >
-          🛒 Satın Al
-        </a>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<section id="yorumlar">
-
-  <div class="container">
-
-    <div class="section-title">
-      <h2>Müşteriler Ne Diyor?</h2>
-      <p>Demo için örnek yorumlar.</p>
-    </div>
-
-    <div class="grid">
-
-      <div class="card testimonial">
-        <div class="stars">★★★★★</div>
-        <p>
-          “Çok modern ve kullanımı gerçekten kolay.”
-        </p>
-        <br>
-        <strong>Örnek Müşteri</strong>
-      </div>
-
-      <div class="card testimonial">
-        <div class="stars">★★★★★</div>
-        <p>
-          “Telefonumda da bilgisayarımda da harika görünüyor.”
-        </p>
-        <br>
-        <strong>Örnek Müşteri</strong>
-      </div>
-
-      <div class="card testimonial">
-        <div class="stars">★★★★★</div>
-        <p>
-          “İşletmem için profesyonel bir görünüm sağladı.”
-        </p>
-        <br>
-        <strong>Örnek Müşteri</strong>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<section id="sss">
-
-  <div class="container">
-
-    <div class="section-title">
-      <h2>Sık Sorulan Sorular</h2>
-      <p>Merak edilen bazı sorular.</p>
-    </div>
-
-    <div class="faq">
-
-      <details>
-        <summary>Bu site telefonda çalışır mı?</summary>
-        <p>
-          Evet. Tasarım mobil cihazlara göre optimize edilmiştir.
-        </p>
-      </details>
-
-      <details>
-        <summary>Metinleri değiştirebilir miyim?</summary>
-        <p>
-          Evet. HTML dosyasındaki metinleri kolayca değiştirebilirsiniz.
-        </p>
-      </details>
-
-      <details>
-        <summary>Renkleri değiştirebilir miyim?</summary>
-        <p>
-          Evet. CSS bölümündeki renk değişkenlerini düzenleyebilirsiniz.
-        </p>
-      </details>
-
-      <details>
-        <summary>Satın aldıktan sonra ne olacak?</summary>
-        <p>
-          Satın alma butonuna bastığınızda e-posta ile sipariş talebi
-          oluşturabilirsiniz.
-        </p>
-      </details>
-
-    </div>
-
-  </div>
-
-</section>
-
-<section id="iletisim">
-
-  <div class="container">
-
-    <div class="contact">
-
-      <div class="section-title">
-
-        <h2>Satın Al veya İletişime Geç</h2>
-
-        <p>
-          Paketlerden birini seçin veya WhatsApp üzerinden bize ulaşın.
-        </p>
-
-      </div>
-
-      <div class="order-box">
-
-        <a
-          href="mailto:eminmehmetmemo753@gmail.com?subject=BusinessPro%20Sipariş"
-          class="btn btn-primary"
-        >
-          📧 E-posta ile Sipariş
-        </a>
-
-        <a
-          href="https://wa.me/32466418624?text=Merhaba%2C%20BusinessPro%20web%20sitesi%20hakkında%20bilgi%20almak%20istiyorum."
-          target="_blank"
-          rel="noopener"
-          class="btn btn-success"
-        >
-          💬 WhatsApp'tan Yaz
-        </a>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<footer>
-
-  <p>
-    © 2026 BusinessPro. Tüm hakları saklıdır.
-  </p>
-
-  <p>
-    Modern işletme web sitesi şablonu.
-  </p>
-
-</footer>
-
-<a
-  href="https://wa.me/32466418624?text=Merhaba%2C%20BusinessPro%20web%20sitesi%20hakkında%20bilgi%20almak%20istiyorum."
-  target="_blank"
-  rel="noopener"
-  class="whatsapp"
-  title="WhatsApp'tan iletişime geç"
->
-  💬
-</a>
-
-<script>
-
-function temaDegistir(){
-
-  document.body.classList.toggle("dark");
-
-  const button = document.querySelector(".icon-btn");
-
-  if(document.body.classList.contains("dark")){
-    button.textContent = "☀️";
-  }else{
-    button.textContent = "🌙";
+  .modal-info h2{
+    font-size:28px;
   }
 
 }
 
-function menuAc(){
+</style>
+</head>
 
-  document
-    .getElementById("nav")
-    .classList.toggle("active");
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+<div class="navbar">
+
+<div class="logo">
+Business<span>Pro</span>
+</div>
+
+
+<nav id="nav">
+
+<a href="#anasayfa">Ana Sayfa</a>
+
+<a href="#ozellikler">Özellikler</a>
+
+<a href="#fiyatlar">Fiyatlar</a>
+
+<a href="#aksesuarlar">Aksesuarlar 🛍️</a>
+
+<a href="#yorumlar">Yorumlar</a>
+
+<a href="#sss">SSS</a>
+
+<a href="#iletisim">İletişim</a>
+
+</nav>
+
+
+<div class="actions">
+
+<button
+class="icon-btn"
+onclick="temaDegistir()">
+🌙
+</button>
+
+<button
+class="menu-btn"
+onclick="menuAc()">
+☰
+</button>
+
+</div>
+
+</div>
+
+</header>
+
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section
+class="hero"
+id="anasayfa">
+
+<div class="hero-content">
+
+<div class="badge">
+🚀 Yeni Nesil İşletme Sitesi
+</div>
+
+<h1>
+İşletmenizi
+<span class="gradient">
+internette büyütün.
+</span>
+</h1>
+
+<p>
+Hızlı, modern, mobil uyumlu ve profesyonel işletme web sitesi.
+</p>
+
+<a
+href="#fiyatlar"
+class="btn btn-primary">
+Paketleri İncele →
+</a>
+
+<a
+href="#aksesuarlar"
+class="btn btn-outline">
+🛍️ Mağazayı Gör
+</a>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     ÖZELLİKLER
+========================= -->
+
+<section id="ozellikler">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+Güçlü Özellikler
+</h2>
+
+<p>
+Modern bir işletme sitesinde ihtiyacınız olan her şey.
+</p>
+
+</div>
+
+
+<div class="grid">
+
+
+<div class="card">
+
+<div class="icon">📱</div>
+
+<h3>
+Mobil Uyumlu
+</h3>
+
+<p>
+Telefon, tablet ve bilgisayarlarda uyumlu şekilde çalışır.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">⚡</div>
+
+<h3>
+Hızlı
+</h3>
+
+<p>
+Hafif yapı sayesinde hızlı yüklenir.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">🎨</div>
+
+<h3>
+Modern Tasarım
+</h3>
+
+<p>
+Profesyonel görünüm ve temiz kullanıcı deneyimi.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">🌙</div>
+
+<h3>
+Karanlık Mod
+</h3>
+
+<p>
+Tek tuşla açık ve koyu tema.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">📲</div>
+
+<h3>
+WhatsApp
+</h3>
+
+<p>
+Müşteriler doğrudan WhatsApp üzerinden ulaşabilir.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">🔧</div>
+
+<h3>
+Kolay Düzenleme
+</h3>
+
+<p>
+Metinleri, fiyatları ve bölümleri kolayca değiştirebilirsiniz.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     FİYATLAR
+========================= -->
+
+<section id="fiyatlar">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+Fiyatlandırma
+</h2>
+
+<p>
+Şimdi özel indirimli fiyatlarla.
+</p>
+
+<div class="discount">
+🔥 BÜYÜK İNDİRİM!
+</div>
+
+</div>
+
+
+<div class="grid">
+
+
+<div class="card">
+
+<h3>
+Başlangıç
+</h3>
+
+<div class="price">
+<del>€49</del> €19
+<small>/ tek sefer</small>
+</div>
+
+<ul class="feature-list">
+
+<li>✅ Tek sayfa site</li>
+
+<li>✅ Mobil uyumlu</li>
+
+<li>✅ İletişim bölümü</li>
+
+<li>✅ Temel tasarım</li>
+
+</ul>
+
+<a
+href="mailto:eminmehmetmemo753@gmail.com?subject=BusinessPro%20Başlangıç%20Paketi"
+class="btn btn-primary">
+
+🛒 Satın Al
+
+</a>
+
+</div>
+
+
+
+<div class="card popular">
+
+<div class="popular-label">
+EN POPÜLER
+</div>
+
+<h3>
+Profesyonel
+</h3>
+
+<div class="price">
+<del>€99</del> €39
+<small>/ tek sefer</small>
+</div>
+
+<ul class="feature-list">
+
+<li>✅ Çok bölümlü site</li>
+
+<li>✅ Mobil uyumlu</li>
+
+<li>✅ Karanlık mod</li>
+
+<li>✅ WhatsApp butonu</li>
+
+<li>✅ Modern animasyonlar</li>
+
+</ul>
+
+<a
+href="mailto:eminmehmetmemo753@gmail.com?subject=BusinessPro%20Profesyonel%20Paketi"
+class="btn btn-primary">
+
+🛒 Satın Al
+
+</a>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+Premium
+</h3>
+
+<div class="price">
+<del>€199</del> €79
+<small>/ tek sefer</small>
+</div>
+
+<ul class="feature-list">
+
+<li>✅ Özel tasarım</li>
+
+<li>✅ Gelişmiş bölümler</li>
+
+<li>✅ Özel renkler</li>
+
+<li>✅ Özel içerikler</li>
+
+<li>✅ Destek</li>
+
+</ul>
+
+<a
+href="mailto:eminmehmetmemo753@gmail.com?subject=BusinessPro%20Premium%20Paketi"
+class="btn btn-primary">
+
+🛒 Satın Al
+
+</a>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     AKSESUAR MAĞAZASI
+========================= -->
+
+<section id="aksesuarlar">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+🛍️ Aksesuarlar
+</h2>
+
+<p>
+Bir ürüne basarak fotoğraflarını, fiyatını ve sipariş seçeneğini görebilirsiniz.
+</p>
+
+</div>
+
+
+<p class="shop-note">
+
+Ürün fotoğrafları ürün kartlarının içinde gösterilir.
+Daha fazla gerçek ürün fotoğrafı eklemek için galeri sistemini kullanabilirsiniz.
+
+</p>
+
+
+<div class="grid">
+
+
+<!-- GUCCI 1 -->
+
+<div
+class="card product-card"
+onclick="urunAc(0)">
+
+<img
+src="gucci1.jpg"
+class="product-image"
+alt="Gucci bel çantası">
+
+<div class="product-info">
+
+<span class="product-badge">
+Bel Çantası
+</span>
+
+<h3>
+Gucci Bel Çantası
+</h3>
+
+<div class="product-price">
+€120
+</div>
+
+<button class="btn btn-primary">
+Ürünü Gör →
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- GUCCI 2 -->
+
+<div
+class="card product-card"
+onclick="urunAc(1)">
+
+<img
+src="gucci2.jpg"
+class="product-image"
+alt="Gucci bel çantası">
+
+<div class="product-info">
+
+<span class="product-badge">
+Bel Çantası
+</span>
+
+<h3>
+Gucci Bel Çantası
+</h3>
+
+<div class="product-price">
+€100
+</div>
+
+<button class="btn btn-primary">
+Ürünü Gör →
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- LV -->
+
+<div
+class="card product-card"
+onclick="urunAc(2)">
+
+<img
+src="lv-kemer.jpg"
+class="product-image"
+alt="Louis Vuitton kemer">
+
+<div class="product-info">
+
+<span class="product-badge">
+Kemer
+</span>
+
+<h3>
+Louis Vuitton Kemer
+</h3>
+
+<div class="product-price">
+€50
+</div>
+
+<button class="btn btn-primary">
+Ürünü Gör →
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- HERMES -->
+
+<div
+class="card product-card"
+onclick="urunAc(3)">
+
+<img
+src="hermes-kemer.jpg"
+class="product-image"
+alt="Hermès kemer">
+
+<div class="product-info">
+
+<span class="product-badge">
+Kemer
+</span>
+
+<h3>
+Hermès Kemer
+</h3>
+
+<div class="product-price">
+€45
+</div>
+
+<button class="btn btn-primary">
+Ürünü Gör →
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- SİYAH KEMER -->
+
+<div
+class="card product-card"
+onclick="urunAc(4)">
+
+<img
+src="siyah-kemer.jpg"
+class="product-image"
+alt="Siyah kemer">
+
+<div class="product-info">
+
+<span class="product-badge">
+Kemer
+</span>
+
+<h3>
+Siyah Kemer
+</h3>
+
+<div class="product-price">
+€50
+</div>
+
+<button class="btn btn-primary">
+Ürünü Gör →
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- LACOSTE -->
+
+<div
+class="card product-card"
+onclick="urunAc(5)">
+
+<div
+style="
+height:270px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:80px;
+background:linear-gradient(135deg,#e2e8f0,#cbd5e1);
+">
+
+⌚
+
+</div>
+
+<div class="product-info">
+
+<span class="product-badge">
+Bileklik
+</span>
+
+<h3>
+Lacoste Gri Bileklik
+</h3>
+
+<div class="product-price">
+€29
+</div>
+
+<button class="btn btn-primary">
+Ürünü Gör →
+</button>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     YORUMLAR
+========================= -->
+
+<section id="yorumlar">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+Müşteriler Ne Diyor?
+</h2>
+
+<p>
+Demo için örnek yorumlar.
+</p>
+
+</div>
+
+
+<div class="grid">
+
+
+<div class="card testimonial">
+
+<div class="stars">
+★★★★★
+</div>
+
+<p>
+“Çok modern ve kullanımı gerçekten kolay.”
+</p>
+
+<br>
+
+<strong>
+Örnek Müşteri
+</strong>
+
+</div>
+
+
+<div class="card testimonial">
+
+<div class="stars">
+★★★★★
+</div>
+
+<p>
+“Telefonumda da bilgisayarımda da harika görünüyor.”
+</p>
+
+<br>
+
+<strong>
+Örnek Müşteri
+</strong>
+
+</div>
+
+
+<div class="card testimonial">
+
+<div class="stars">
+★★★★★
+</div>
+
+<p>
+“İşletmem için profesyonel bir görünüm sağladı.”
+</p>
+
+<br>
+
+<strong>
+Örnek Müşteri
+</strong>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     SSS
+========================= -->
+
+<section id="sss">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+Sık Sorulan Sorular
+</h2>
+
+<p>
+Merak edilen bazı sorular.
+</p>
+
+</div>
+
+
+<div class="faq">
+
+
+<details>
+
+<summary>
+Bu site telefonda çalışır mı?
+</summary>
+
+<p>
+Evet. Tasarım mobil cihazlara göre optimize edilmiştir.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>
+Metinleri değiştirebilir miyim?
+</summary>
+
+<p>
+Evet. HTML dosyasındaki metinleri değiştirebilirsiniz.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>
+Renkleri değiştirebilir miyim?
+</summary>
+
+<p>
+Evet. CSS bölümündeki renkleri değiştirebilirsiniz.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>
+Satın aldıktan sonra ne olacak?
+</summary>
+
+<p>
+Satın alma butonuna bastığınızda e-posta ile sipariş talebi oluşturabilirsiniz.
+</p>
+
+</details>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     İLETİŞİM
+========================= -->
+
+<section id="iletisim">
+
+<div class="container">
+
+<div class="contact">
+
+<div class="section-title">
+
+<h2>
+Satın Al veya İletişime Geç
+</h2>
+
+<p>
+Paketlerden birini seçin veya WhatsApp üzerinden bize ulaşın.
+</p>
+
+</div>
+
+
+<div class="order-box">
+
+<a
+href="mailto:eminmehmetmemo753@gmail.com?subject=BusinessPro%20Sipariş"
+class="btn btn-primary">
+
+📧 E-posta ile Sipariş
+
+</a>
+
+
+<a
+href="https://wa.me/32466418624?text=Merhaba%2C%20BusinessPro%20web%20sitesi%20hakkında%20bilgi%20almak%20istiyorum."
+target="_blank"
+class="btn btn-success">
+
+💬 WhatsApp'tan Yaz
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<footer>
+
+<p>
+© 2026 BusinessPro. Tüm hakları saklıdır.
+</p>
+
+<p>
+Modern işletme web sitesi şablonu.
+</p>
+
+</footer>
+
+
+
+<a
+href="https://wa.me/32466418624?text=Merhaba%2C%20BusinessPro%20web%20sitesi%20hakkında%20bilgi%20almak%20istiyorum."
+target="_blank"
+class="whatsapp">
+
+💬
+
+</a>
+
+
+
+<!-- =========================
+     ÜRÜN DETAY MODALI
+========================= -->
+
+<div
+class="modal"
+id="urunModal"
+onclick="modalDisinaTikla(event)">
+
+
+<div class="modal-box">
+
+
+<button
+class="close"
+onclick="modalKapat()">
+
+×
+
+</button>
+
+
+<div>
+
+<img
+id="modalImage"
+class="main-product-photo"
+src=""
+alt="">
+
+
+<div class="gallery-title">
+📸 Ürün fotoğrafları
+</div>
+
+
+<div
+class="gallery"
+id="gallery">
+</div>
+
+</div>
+
+
+
+<div class="modal-info">
+
+
+<span
+id="modalBrand"
+class="product-badge">
+</span>
+
+
+<h2
+id="modalTitle">
+</h2>
+
+
+<div
+id="modalPrice"
+class="modal-price">
+</div>
+
+
+<p
+id="modalDescription">
+</p>
+
+
+<a
+id="modalWhatsapp"
+class="btn btn-success"
+target="_blank">
+
+💬 WhatsApp'tan Satın Al
+
+</a>
+
+
+<button
+class="btn btn-outline"
+onclick="modalKapat()">
+
+Kapat
+
+</button>
+
+
+</div>
+
+
+</div>
+
+</div>
+
+
+
+<script>
+
+
+/* ===================================
+   ÜRÜNLER
+=================================== */
+
+
+const urunler = [
+
+
+{
+title:"Gucci Bel Çantası",
+brand:"Bel Çantası",
+price:"€120",
+
+images:[
+"gucci1.jpg"
+],
+
+description:
+"Gucci bel çantası. Ürün hakkında detaylı bilgi, beden ve stok durumunu WhatsApp üzerinden sorabilirsiniz."
+},
+
+
+
+{
+title:"Gucci Bel Çantası",
+brand:"Bel Çantası",
+price:"€100",
+
+images:[
+"gucci2.jpg"
+],
+
+description:
+"Gucci bel çantası. Ürün hakkında detaylı bilgi, beden ve stok durumunu WhatsApp üzerinden sorabilirsiniz."
+},
+
+
+
+{
+title:"Louis Vuitton Kemer",
+brand:"Kemer",
+price:"€50",
+
+images:[
+"lv-kemer.jpg"
+],
+
+description:
+"Louis Vuitton kemer. Beden ve stok bilgisi için WhatsApp üzerinden iletişime geçebilirsiniz."
+},
+
+
+
+{
+title:"Hermès Kemer",
+brand:"Kemer",
+price:"€45",
+
+images:[
+"hermes-kemer.jpg"
+],
+
+description:
+"Hermès kemer. Beden ve stok bilgisi için WhatsApp üzerinden iletişime geçebilirsiniz."
+},
+
+
+
+{
+title:"Siyah Kemer",
+brand:"Kemer",
+price:"€50",
+
+images:[
+"siyah-kemer.jpg"
+],
+
+description:
+"Siyah kemer. Beden ve stok bilgisi için WhatsApp üzerinden iletişime geçebilirsiniz."
+},
+
+
+
+{
+title:"Lacoste Gri Bileklik",
+brand:"Bileklik",
+price:"€29",
+
+images:[],
+
+description:
+"Lacoste gri bileklik. Kendi ürün fotoğrafınızı eklediğinizde bu ürüne de galeri fotoğrafları ekleyebilirsiniz."
+}
+
+
+];
+
+
+
+/* ===================================
+   ÜRÜN AÇ
+=================================== */
+
+
+function urunAc(index){
+
+const urun = urunler[index];
+
+document.getElementById("modalTitle").textContent =
+urun.title;
+
+document.getElementById("modalBrand").textContent =
+urun.brand;
+
+document.getElementById("modalPrice").textContent =
+urun.price;
+
+document.getElementById("modalDescription").textContent =
+urun.description;
+
+
+
+const gallery =
+document.getElementById("gallery");
+
+gallery.innerHTML = "";
+
+
+
+/* FOTOĞRAFLAR */
+
+if(urun.images.length > 0){
+
+document.getElementById("modalImage").src =
+urun.images[0];
+
+
+urun.images.forEach(function(image,index){
+
+const img =
+document.createElement("img");
+
+img.src = image;
+
+img.className =
+"gallery-thumb";
+
+
+if(index === 0){
+
+img.classList.add("active");
 
 }
 
+
+img.onclick = function(){
+
+document.getElementById("modalImage").src =
+image;
+
+
 document
-  .querySelectorAll("nav a")
-  .forEach(function(link){
+.querySelectorAll(".gallery-thumb")
+.forEach(function(item){
 
-    link.addEventListener("click",function(){
+item.classList.remove("active");
 
-      document
-        .getElementById("nav")
-        .classList.remove("active");
+});
 
-    });
 
-  });
+img.classList.add("active");
+
+};
+
+
+gallery.appendChild(img);
+
+});
+
+
+}else{
+
+document.getElementById("modalImage").src = "";
+
+gallery.innerHTML =
+"<p style='padding:10px;color:#64748b;'>Ürün fotoğrafı yakında eklenecek.</p>";
+
+}
+
+
+
+/* WHATSAPP */
+
+const mesaj =
+"Merhaba, " +
+urun.title +
+" (" +
+urun.price +
+") hakkında bilgi almak istiyorum.";
+
+
+document.getElementById("modalWhatsapp").href =
+"https://wa.me/32466418624?text=" +
+encodeURIComponent(mesaj);
+
+
+
+/* MODAL */
+
+document
+.getElementById("urunModal")
+.classList.add("active");
+
+
+document.body.style.overflow =
+"hidden";
+
+}
+
+
+
+/* ===================================
+   MODAL KAPAT
+=================================== */
+
+
+function modalKapat(){
+
+document
+.getElementById("urunModal")
+.classList.remove("active");
+
+document.body.style.overflow = "";
+
+}
+
+
+
+function modalDisinaTikla(event){
+
+if(event.target.id === "urunModal"){
+
+modalKapat();
+
+}
+
+}
+
+
+
+/* ===================================
+   TEMA
+=================================== */
+
+
+function temaDegistir(){
+
+document.body.classList.toggle("dark");
+
+
+const button =
+document.querySelector(".icon-btn");
+
+
+if(
+document.body.classList.contains("dark")
+){
+
+button.textContent = "☀️";
+
+}else{
+
+button.textContent = "🌙";
+
+}
+
+}
+
+
+
+/* ===================================
+   MOBİL MENÜ
+=================================== */
+
+
+function menuAc(){
+
+document
+.getElementById("nav")
+.classList.toggle("active");
+
+}
+
+
+
+document
+.querySelectorAll("nav a")
+.forEach(function(link){
+
+link.addEventListener(
+"click",
+function(){
+
+document
+.getElementById("nav")
+.classList.remove("active");
+
+}
+);
+
+});
+
+
+
+/* ESC İLE KAPAT */
+
+document.addEventListener(
+"keydown",
+function(event){
+
+if(event.key === "Escape"){
+
+modalKapat();
+
+}
+
+}
+);
+
 
 </script>
 
+
 </body>
 </html>
-  
