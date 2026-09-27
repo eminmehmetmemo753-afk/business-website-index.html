@@ -1,446 +1,794 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Business Website Starter Kit</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    :root {
-      --bg: #f5f7fb;
-      --card: #ffffff;
-      --text: #111827;
-      --muted: #6b7280;
-      --primary: #2563eb;
-      --primary-dark: #1d4ed8;
-      --border: #e5e7eb;
-    }
+<title>BusinessPro | Modern İşletme Web Sitesi</title>
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
+<meta name="description" content="Modern, hızlı ve mobil uyumlu işletme web sitesi şablonu.">
 
-    body {
-      font-family: Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
+<style>
+:root{
+  --bg:#f8fafc;
+  --card:#ffffff;
+  --text:#0f172a;
+  --muted:#64748b;
+  --primary:#2563eb;
+  --primary2:#7c3aed;
+  --border:#e2e8f0;
+  --shadow:0 15px 40px rgba(15,23,42,.08);
+}
 
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: var(--card);
-      border-bottom: 1px solid var(--border);
-      padding: 15px 6%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+}
 
-    .logo {
-      font-size: 22px;
-      font-weight: bold;
-    }
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+}
 
-    nav {
-      display: flex;
-      gap: 20px;
-    }
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+    background:rgba(255,255,255,.92);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+}
 
-    nav a {
-      text-decoration: none;
-      color: var(--text);
-      font-weight: bold;
-    }
+.navbar{
+  max-width:1150px;
+  margin:auto;
+  padding:16px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
 
-    nav a:hover {
-      color: var(--primary);
-    }
+.logo{
+  font-size:23px;
+  font-weight:800;
+}
 
-    .theme-btn,
-    .menu-btn {
-      border: none;
-      background: var(--primary);
-      color: white;
-      padding: 10px 13px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 16px;
-    }
+.logo span{
+  color:var(--primary);
+}
 
-    .menu-btn {
-      display: none;
-    }
+nav{
+  display:flex;
+  gap:25px;
+  align-items:center;
+}
 
-    section {
-      padding: 80px 6%;
-    }
+nav a{
+  color:var(--text);
+  text-decoration:none;
+  font-weight:600;
+}
 
-    .hero {
-      min-height: 90vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      background: linear-gradient(135deg, #dbeafe, #ffffff);
-    }
+nav a:hover{
+  color:var(--primary);
+}
 
-    .hero-content {
-      max-width: 800px;
-      animation: fadeUp 1s ease;
-    }
+.actions{
+  display:flex;
+  gap:8px;
+  align-items:center;
+}
 
-    .hero h1 {
-      font-size: clamp(40px, 7vw, 72px);
-      margin-bottom: 20px;
-    }
+.icon-btn,
+.menu-btn{
+  border:0;
+  cursor:pointer;
+  background:#eef2ff;
+  padding:10px 12px;
+  border-radius:10px;
+  font-size:17px;
+}
 
-    .hero p {
-      font-size: 20px;
-      color: var(--muted);
-      margin-bottom: 30px;
-    }
+.menu-btn{
+  display:none;
+}
 
-    .btn {
-      display: inline-block;
-      padding: 14px 24px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: bold;
-      margin: 5px;
-      transition: 0.3s;
-    }
+.hero{
+  min-height:90vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:80px 20px;
+  background:
+    radial-gradient(circle at top left,#dbeafe,transparent 35%),
+    radial-gradient(circle at bottom right,#ede9fe,transparent 35%);
+}
 
-    .btn-primary {
-      background: var(--primary);
-      color: white;
-    }
+.hero-content{
+  max-width:850px;
+  animation:show .8s ease;
+}
 
-    .btn-primary:hover {
-      background: var(--primary-dark);
-      transform: translateY(-3px);
-    }
+.badge{
+  display:inline-block;
+  padding:8px 15px;
+  border-radius:50px;
+  background:#dbeafe;
+  color:#1d4ed8;
+  font-weight:700;
+  margin-bottom:20px;
+}
 
-    .btn-secondary {
-      border: 2px solid var(--primary);
-      color: var(--primary);
-    }
+.hero h1{
+  font-size:clamp(42px,7vw,76px);
+  line-height:1.05;
+  margin-bottom:25px;
+}
 
-    .btn-secondary:hover {
-      background: var(--primary);
-      color: white;
-    }
+.gradient{
+  background:linear-gradient(90deg,var(--primary),var(--primary2));
+  -webkit-background-clip:text;
+  color:transparent;
+}
 
-    .title {
-      text-align: center;
-      margin-bottom: 45px;
-    }
+.hero p{
+  max-width:650px;
+  margin:0 auto 30px;
+  color:var(--muted);
+  font-size:19px;
+}
 
-    .title h2 {
-      font-size: 38px;
-      margin-bottom: 10px;
-    }
+.btn{
+  display:inline-block;
+  padding:14px 24px;
+  border-radius:12px;
+  text-decoration:none;
+  font-weight:700;
+  margin:5px;
+  transition:.25s;
+}
 
-    .title p {
-      color: var(--muted);
-    }
+.btn-primary{
+  color:white;
+  background:linear-gradient(135deg,var(--primary),var(--primary2));
+  box-shadow:0 10px 25px rgba(37,99,235,.25);
+}
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-      max-width: 1100px;
-      margin: auto;
-    }
+.btn-primary:hover{
+  transform:translateY(-3px);
+}
 
-    .card {
-      background: var(--card);
-      padding: 30px;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      transition: 0.3s;
-    }
+.btn-outline{
+  color:var(--text);
+  border:1px solid var(--border);
+  background:var(--card);
+}
 
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.08);
-    }
+.btn-outline:hover{
+  transform:translateY(-3px);
+}
 
-    .card h3 {
-      margin-bottom: 12px;
-    }
+section{
+  padding:90px 20px;
+}
 
-    .card p {
-      color: var(--muted);
-    }
+.container{
+  max-width:1150px;
+  margin:auto;
+}
 
-    .price {
-      font-size: 35px;
-      font-weight: bold;
-      margin: 15px 0;
-    }
+.section-title{
+  text-align:center;
+  margin-bottom:50px;
+}
 
-    .price span {
-      font-size: 15px;
-      color: var(--muted);
-    }
+.section-title h2{
+  font-size:40px;
+  margin-bottom:10px;
+}
 
-    .contact {
-      max-width: 800px;
-      margin: auto;
-      text-align: center;
-    }
+.section-title p{
+  color:var(--muted);
+}
 
-    footer {
-      text-align: center;
-      padding: 30px;
-      background: var(--card);
-      border-top: 1px solid var(--border);
-    }
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+}
 
-    .whatsapp {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      width: 58px;
-      height: 58px;
-      border-radius: 50%;
-      background: #25D366;
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      font-size: 27px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-      z-index: 999;
-    }
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:20px;
+  padding:30px;
+  box-shadow:var(--shadow);
+  transition:.3s;
+}
 
-    body.dark {
-      --bg: #111827;
-      --card: #1f2937;
-      --text: #f9fafb;
-      --muted: #9ca3af;
-      --border: #374151;
-    }
+.card:hover{
+  transform:translateY(-8px);
+}
 
-    body.dark .hero {
-      background: linear-gradient(135deg, #111827, #1f2937);
-    }
+.icon{
+  font-size:35px;
+  margin-bottom:15px;
+}
 
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+.card h3{
+  margin-bottom:10px;
+  font-size:22px;
+}
 
-    @media (max-width: 800px) {
-      nav {
-        display: none;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        background: var(--card);
-        padding: 20px;
-        flex-direction: column;
-        text-align: center;
-        border-bottom: 1px solid var(--border);
-      }
+.card p{
+  color:var(--muted);
+}
 
-      nav.active {
-        display: flex;
-      }
+.feature-list{
+  list-style:none;
+  margin-top:20px;
+}
 
-      .menu-btn {
-        display: inline-block;
-      }
+.feature-list li{
+  margin:10px 0;
+}
 
-      .grid {
-        grid-template-columns: 1fr;
-      }
+.price{
+  font-size:42px;
+  font-weight:800;
+  margin:20px 0;
+}
 
-      section {
-        padding: 60px 5%;
-      }
+.price small{
+  font-size:15px;
+  color:var(--muted);
+}
 
-      .hero {
-        min-height: 80vh;
-      }
-    }
-  </style>
+.popular{
+  border:2px solid var(--primary);
+  position:relative;
+}
+
+.popular-label{
+  position:absolute;
+  top:-14px;
+  left:50%;
+  transform:translateX(-50%);
+  background:var(--primary);
+  color:white;
+  padding:5px 15px;
+  border-radius:30px;
+  font-size:13px;
+  font-weight:bold;
+}
+
+.testimonial{
+  text-align:center;
+}
+
+.stars{
+  color:#f59e0b;
+  font-size:20px;
+  margin-bottom:15px;
+}
+
+.faq{
+  max-width:800px;
+  margin:auto;
+}
+
+details{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:14px;
+  margin:12px 0;
+  padding:18px 20px;
+}
+
+summary{
+  cursor:pointer;
+  font-weight:700;
+}
+
+details p{
+  color:var(--muted);
+  margin-top:12px;
+}
+
+.contact{
+  max-width:800px;
+  margin:auto;
+  text-align:center;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:25px;
+  padding:50px 25px;
+  box-shadow:var(--shadow);
+}
+
+footer{
+  padding:35px 20px;
+  text-align:center;
+  border-top:1px solid var(--border);
+  color:var(--muted);
+}
+
+.whatsapp{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  background:#25d366;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  font-size:27px;
+  box-shadow:0 10px 25px rgba(0,0,0,.2);
+  z-index:999;
+}
+
+.dark{
+  --bg:#0f172a;
+  --card:#1e293b;
+  --text:#f8fafc;
+  --muted:#94a3b8;
+  --border:#334155;
+  --shadow:0 15px 40px rgba(0,0,0,.25);
+}
+
+.dark header{
+  background:rgba(15,23,42,.92);
+}
+
+.dark .hero{
+  background:
+    radial-gradient(circle at top left,#172554,transparent 35%),
+    radial-gradient(circle at bottom right,#312e81,transparent 35%);
+}
+
+.dark .badge{
+  background:#1e3a8a;
+  color:#bfdbfe;
+}
+
+@keyframes show{
+  from{
+    opacity:0;
+    transform:translateY(30px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@media(max-width:800px){
+
+  nav{
+    display:none;
+    position:absolute;
+    top:70px;
+    left:0;
+    width:100%;
+    background:var(--card);
+    padding:20px;
+    flex-direction:column;
+    border-bottom:1px solid var(--border);
+  }
+
+  nav.active{
+    display:flex;
+  }
+
+  .menu-btn{
+    display:block;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero h1{
+    font-size:45px;
+  }
+
+  section{
+    padding:65px 20px;
+  }
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <div class="logo">BusinessKit</div>
+  <div class="navbar">
 
-  <nav id="nav">
-    <a href="#anasayfa">Ana Sayfa</a>
-    <a href="#hizmetler">Hizmetler</a>
-    <a href="#fiyatlar">Fiyatlar</a>
-    <a href="#yorumlar">Yorumlar</a>
-    <a href="#iletisim">İletişim</a>
-  </nav>
+    <div class="logo">
+      Business<span>Pro</span>
+    </div>
 
-  <div>
-    <button class="theme-btn" onclick="temaDegistir()">🌙</button>
-    <button class="menu-btn" onclick="menuAc()">☰</button>
+    <nav id="nav">
+      <a href="#anasayfa">Ana Sayfa</a>
+      <a href="#ozellikler">Özellikler</a>
+      <a href="#fiyatlar">Fiyatlar</a>
+      <a href="#yorumlar">Yorumlar</a>
+      <a href="#sss">SSS</a>
+      <a href="#iletisim">İletişim</a>
+    </nav>
+
+    <div class="actions">
+      <button class="icon-btn" onclick="temaDegistir()">🌙</button>
+      <button class="menu-btn" onclick="menuAc()">☰</button>
+    </div>
+
   </div>
 </header>
 
 <section class="hero" id="anasayfa">
+
   <div class="hero-content">
-    <h1>İşletmeniz İçin Modern Web Sitesi</h1>
+
+    <div class="badge">
+      🚀 Yeni Nesil İşletme Sitesi
+    </div>
+
+    <h1>
+      İşletmenizi <span class="gradient">internette büyütün.</span>
+    </h1>
 
     <p>
-      Hızlı, mobil uyumlu ve profesyonel işletme web sitesi şablonu.
+      Hızlı, modern, mobil uyumlu ve profesyonel işletme web sitesi.
+      Kodlama bilgisi olmadan kolayca düzenleyin.
     </p>
 
-    <a href="#fiyatlar" class="btn btn-primary">Fiyatları Gör</a>
-    <a href="#iletisim" class="btn btn-secondary">İletişime Geç</a>
+    <a href="#fiyatlar" class="btn btn-primary">
+      Paketleri İncele →
+    </a>
+
+    <a href="#iletisim" class="btn btn-outline">
+      İletişime Geç
+    </a>
+
   </div>
+
 </section>
 
-<section id="hizmetler">
-  <div class="title">
-    <h2>Hizmetler</h2>
-    <p>İşletmenizi internette daha profesyonel gösterin.</p>
+<section id="ozellikler">
+
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Güçlü Özellikler</h2>
+      <p>Modern bir işletme sitesinde ihtiyacınız olan her şey.</p>
+    </div>
+
+    <div class="grid">
+
+      <div class="card">
+        <div class="icon">📱</div>
+        <h3>Mobil Uyumlu</h3>
+        <p>
+          Telefon, tablet ve bilgisayarlarda kusursuz şekilde çalışır.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">⚡</div>
+        <h3>Hızlı</h3>
+        <p>
+          Hafif ve optimize edilmiş yapı sayesinde hızlı yüklenir.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🎨</div>
+        <h3>Modern Tasarım</h3>
+        <p>
+          Profesyonel görünüm ve temiz kullanıcı deneyimi.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🌙</div>
+        <h3>Karanlık Mod</h3>
+        <p>
+          Tek tuşla açık ve koyu tema arasında geçiş yapabilirsiniz.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">📲</div>
+        <h3>WhatsApp</h3>
+        <p>
+          Müşterileriniz doğrudan WhatsApp üzerinden iletişime geçebilir.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🔧</div>
+        <h3>Kolay Düzenleme</h3>
+        <p>
+          Metinleri, fiyatları ve bölümleri kolayca değiştirebilirsiniz.
+        </p>
+      </div>
+
+    </div>
+
   </div>
 
-  <div class="grid">
-    <div class="card">
-      <h3>📱 Mobil Uyumlu</h3>
-      <p>Telefon, tablet ve bilgisayarlarda düzgün çalışır.</p>
-    </div>
-
-    <div class="card">
-      <h3>⚡ Hızlı</h3>
-      <p>Basit ve optimize edilmiş yapı sayesinde hızlı açılır.</p>
-    </div>
-
-    <div class="card">
-      <h3>🎨 Modern Tasarım</h3>
-      <p>Temiz, profesyonel ve kolay düzenlenebilir tasarım.</p>
-    </div>
-  </div>
 </section>
 
 <section id="fiyatlar">
-  <div class="title">
-    <h2>Fiyatlandırma</h2>
-    <p>İhtiyacınıza uygun paketi seçin.</p>
+
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Fiyatlandırma</h2>
+      <p>İhtiyacınıza uygun paketi seçin.</p>
+    </div>
+
+    <div class="grid">
+
+      <div class="card">
+        <h3>Başlangıç</h3>
+
+        <div class="price">
+          €49
+          <small>/ tek sefer</small>
+        </div>
+
+        <ul class="feature-list">
+          <li>✅ Tek sayfa site</li>
+          <li>✅ Mobil uyumlu</li>
+          <li>✅ İletişim bölümü</li>
+          <li>✅ Temel tasarım</li>
+        </ul>
+
+        <a href="#iletisim" class="btn btn-primary">
+          Başla
+        </a>
+      </div>
+
+      <div class="card popular">
+
+        <div class="popular-label">
+          EN POPÜLER
+        </div>
+
+        <h3>Profesyonel</h3>
+
+        <div class="price">
+          €99
+          <small>/ tek sefer</small>
+        </div>
+
+        <ul class="feature-list">
+          <li>✅ Çok bölümlü site</li>
+          <li>✅ Mobil uyumlu</li>
+          <li>✅ Karanlık mod</li>
+          <li>✅ WhatsApp butonu</li>
+          <li>✅ Modern animasyonlar</li>
+        </ul>
+
+        <a href="#iletisim" class="btn btn-primary">
+          Başla
+        </a>
+      </div>
+
+      <div class="card">
+
+        <h3>Premium</h3>
+
+        <div class="price">
+          €199
+          <small>/ tek sefer</small>
+        </div>
+
+        <ul class="feature-list">
+          <li>✅ Özel tasarım</li>
+          <li>✅ Gelişmiş bölümler</li>
+          <li>✅ Özel renkler</li>
+          <li>✅ Özel içerikler</li>
+          <li>✅ Destek</li>
+        </ul>
+
+        <a href="#iletisim" class="btn btn-primary">
+          Başla
+        </a>
+      </div>
+
+    </div>
+
   </div>
 
-  <div class="grid">
-    <div class="card">
-      <h3>Başlangıç</h3>
-      <div class="price">€49</div>
-      <p>Tek sayfa web sitesi.</p>
-      <a href="#iletisim" class="btn btn-primary">Başla</a>
-    </div>
-
-    <div class="card">
-      <h3>Profesyonel</h3>
-      <div class="price">€99</div>
-      <p>Gelişmiş işletme web sitesi.</p>
-      <a href="#iletisim" class="btn btn-primary">Başla</a>
-    </div>
-
-    <div class="card">
-      <h3>Premium</h3>
-      <div class="price">€199</div>
-      <p>Özel tasarım ve gelişmiş özellikler.</p>
-      <a href="#iletisim" class="btn btn-primary">Başla</a>
-    </div>
-  </div>
 </section>
 
 <section id="yorumlar">
-  <div class="title">
-    <h2>Müşteri Yorumları</h2>
-    <p>Örnek yorum alanı.</p>
+
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Müşteriler Ne Diyor?</h2>
+      <p>Örnek müşteri yorumları.</p>
+    </div>
+
+    <div class="grid">
+
+      <div class="card testimonial">
+        <div class="stars">★★★★★</div>
+        <p>
+          “Çok modern ve kullanımı gerçekten kolay.”
+        </p>
+        <br>
+        <strong>Ahmet K.</strong>
+      </div>
+
+      <div class="card testimonial">
+        <div class="stars">★★★★★</div>
+        <p>
+          “Telefonumda da bilgisayarımda da harika görünüyor.”
+        </p>
+        <br>
+        <strong>Mehmet T.</strong>
+      </div>
+
+      <div class="card testimonial">
+        <div class="stars">★★★★★</div>
+        <p>
+          “İşletmem için profesyonel bir görünüm sağladı.”
+        </p>
+        <br>
+        <strong>Ayşe D.</strong>
+      </div>
+
+    </div>
+
   </div>
 
-  <div class="grid">
-    <div class="card">
-      <h3>⭐⭐⭐⭐⭐</h3>
-      <p>"Çok modern ve kullanımı kolay bir site."</p>
-      <br>
-      <strong>— Ahmet</strong>
+</section>
+
+<section id="sss">
+
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Sık Sorulan Sorular</h2>
+      <p>Merak edilen bazı sorular.</p>
     </div>
 
-    <div class="card">
-      <h3>⭐⭐⭐⭐⭐</h3>
-      <p>"Telefonumda da çok güzel görünüyor."</p>
-      <br>
-      <strong>— Mehmet</strong>
+    <div class="faq">
+
+      <details>
+        <summary>Bu site telefonda çalışır mı?</summary>
+        <p>
+          Evet. Tasarım mobil cihazlara göre optimize edilmiştir.
+        </p>
+      </details>
+
+      <details>
+        <summary>Metinleri değiştirebilir miyim?</summary>
+        <p>
+          Evet. HTML dosyasındaki metinleri kolayca değiştirebilirsiniz.
+        </p>
+      </details>
+
+      <details>
+        <summary>Renkleri değiştirebilir miyim?</summary>
+        <p>
+          Evet. CSS bölümündeki renk değişkenlerini düzenleyebilirsiniz.
+        </p>
+      </details>
+
+      <details>
+        <summary>Kendi alan adımı kullanabilir miyim?</summary>
+        <p>
+          Evet. Uygun bir hosting veya GitHub Pages yapılandırmasıyla
+          kendi alan adınızı bağlayabilirsiniz.
+        </p>
+      </details>
+
     </div>
 
-    <div class="card">
-      <h3>⭐⭐⭐⭐⭐</h3>
-      <p>"İşletmem için tam istediğim gibi."</p>
-      <br>
-      <strong>— Ayşe</strong>
-    </div>
   </div>
+
 </section>
 
 <section id="iletisim">
-  <div class="contact">
-    <div class="title">
-      <h2>İletişime Geç</h2>
-      <p>Web siteniz hakkında konuşmak için bize ulaşın.</p>
+
+  <div class="container">
+
+    <div class="contact">
+
+      <div class="section-title">
+        <h2>İletişime Geç</h2>
+
+        <p>
+          Web sitesi hakkında bilgi almak için bize ulaşın.
+        </p>
+      </div>
+
+      <a
+        href="mailto:eminmehmetmemo753@gmail.com"
+        class="btn btn-primary"
+      >
+        📧 E-posta Gönder
+      </a>
+
     </div>
 
-    <a
-      href="mailto:eminmehmetmemo753@gmail.com"
-      class="btn btn-primary"
-    >
-      📧 E-posta Gönder
-    </a>
   </div>
+
 </section>
 
 <footer>
-  © 2026 BusinessKit — Tüm hakları saklıdır.
+
+  <p>
+    © 2026 BusinessPro. Tüm hakları saklıdır.
+  </p>
+
 </footer>
 
 <a
-  class="whatsapp"
   href="https://wa.me/"
   target="_blank"
+  class="whatsapp"
   title="WhatsApp"
 >
   💬
 </a>
 
 <script>
-  function temaDegistir() {
-    document.body.classList.toggle("dark");
+
+function temaDegistir(){
+
+  document.body.classList.toggle("dark");
+
+  const button =
+    document.querySelector(".icon-btn");
+
+  if(document.body.classList.contains("dark")){
+    button.textContent = "☀️";
+  }else{
+    button.textContent = "🌙";
   }
 
-  function menuAc() {
-    document.getElementById("nav").classList.toggle("active");
-  }
+}
 
-  document.querySelectorAll("nav a").forEach(function(link) {
-    link.addEventListener("click", function() {
-      document.getElementById("nav").classList.remove("active");
+function menuAc(){
+
+  document
+    .getElementById("nav")
+    .classList.toggle("active");
+
+}
+
+document
+  .querySelectorAll("nav a")
+  .forEach(function(link){
+
+    link.addEventListener("click",function(){
+
+      document
+        .getElementById("nav")
+        .classList.remove("active");
+
     });
+
   });
+
 </script>
 
 </body>
 </html>
+ 
